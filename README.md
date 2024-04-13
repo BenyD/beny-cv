@@ -1,67 +1,29 @@
-![cv](https://github.com/BartoszJarocki/cv/assets/1017620/79bdb9fc-0b20-4d2c-aafe-0526ad4a71d2)
+# Beny's CV Website
 
-# Minimalist CV [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FBartoszJarocki%2Fcv)
+This project is a personal website that I created to showcase my CV.
 
-Simple web app that renders minimalist CV with print-friendly layout.
+## Running the tests
 
-Built with Next.js and shadcn/ui, deployed on Vercel.
+Explain how to run the automated tests for this system.
 
-# Features
+## Deployment
 
-- Setup only takes a few minutes [single config file](./src/data/resume-data.tsx)
-- Built using Next.js 14, React, Typescript, Shadcn/ui, TailwindCss
-- Auto generated Layout
-- Responsive for different devices
-- Optimized for Next.js and Vercel
+Deployed using Vercel
 
-# Getting Started Locally
+## Built With
 
-1. Clone this repository to your local machine:
+- [Nextjs v14](https://nextjs.org/) - The web framework used
 
-   ```bash
-   git clone https://github.com/BartoszJarocki/cv.git
-   ```
+## Authors
 
-2. Move to the cloned directory
+- **BartoszJarocki** - _Initial work_ - [BartoszJarocki](https://github.com/BartoszJarocki/)
+- **BenyD** - _Final Tweaks and Content_ - [BenyD](https://github.com/BenyD)
 
-   ```bash
-   cd cv
-   ```
+## License
 
-3. Install dependencies:
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-   ```bash
-   yarn install
-   ```
+## Acknowledgments
 
-4. Start the local Server:
-
-   ```bash
-   yarn dev
-   ```
-
-5. Open the [Config file](./src/data/resume-data.tsx) and make changes
-
-# Run with Docker
-
-Build the container
-
-```
-docker compose build
-```
-
-Run the container
-
-```
-docker compose up -d
-```
-
-Stop the Container
-
-```
-docker compose down 
-```
-
-# License
-
-[MIT](https://choosealicense.com/licenses/mit/)
+- Template by [BartoszJarocki](https://github.com/BartoszJarocki/cv)
+- Additional sections like languages, certifications & publications along with tweaks and bug fixes are the work which i put into this project.

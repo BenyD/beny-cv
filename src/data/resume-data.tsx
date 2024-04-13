@@ -1,278 +1,196 @@
 import {
-  AmbitLogo,
-  BarepapersLogo,
-  BimLogo,
-  CDGOLogo,
-  ClevertechLogo,
-  ConsultlyLogo,
-  EvercastLogo,
-  Howdy,
-  JarockiMeLogo,
-  JojoMobileLogo,
-  Minimal,
-  MobileVikingsLogo,
-  MonitoLogo,
-  NSNLogo,
-  ParabolLogo,
-  TastyCloudLogo,
-  YearProgressLogo,
+  BenyLogo,
+  GAlbumLogo,
+  MaxsoftLogo,
+  WatcherAILogo,
 } from "@/images/logos";
 import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons";
 
 export const RESUME_DATA = {
-  name: "Bartosz Jarocki",
-  initials: "BJ",
-  location: "Wrocław, Poland, CET",
-  locationLink: "https://www.google.com/maps/place/Wrocław",
-  about:
-    "Full Stack Engineer focused on building products with extra attention to detail",
+  name: "Beny Dishon K",
+  initials: "BD",
+  location: "Chennai, India, IST (UTC+5:30)",
+  locationLink: "https://www.google.com/maps/place/Chennai",
+  about: "Student focused on building products with extra attention to detail",
   summary:
-    "As a Full Stack Engineer, I have successfully taken multiple products from 0 to 1. I lead teams effectively, ensuring an environment where people can do their best work. Currently, I work mostly with TypeScript, React, Node.js, and GraphQL. I have over 8 years of experience in working remotely with companies all around the world.",
-  avatarUrl: "https://avatars.githubusercontent.com/u/1017620?v=4",
-  personalWebsiteUrl: "https://jarocki.me",
+    "As a student and aspiring Full Stack Developer, I have acquired multiple certifications in full stack development. Additionally, I have completed various freelance projects. My current expertise revolves around TypeScript, NextJS, Node.js, and MongoDB. I am continuously seeking new opportunities to expand my knowledge and skills.",
+  avatarUrl:
+    "https://media.licdn.com/dms/image/D5603AQFj_Qtbn6tt8g/profile-displayphoto-shrink_200_200/0/1705775112790?e=2147483647&v=beta&t=Nc0xGxZJR7OZKo3fbKh4ty6jliwPi19kE9CbDEvkqR4",
+  personalWebsiteUrl: "https://beny.one",
   contact: {
-    email: "bartosz.jarocki@hey.com",
-    tel: "+48530213401",
+    email: "benydishon@gmail.com",
+    tel: "+919884819912",
     social: [
       {
         name: "GitHub",
-        url: "https://github.com/BartoszJarocki",
+        url: "https://github.com/BenyD",
         icon: GitHubIcon,
       },
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/bjarocki/",
+        url: "https://www.linkedin.com/in/benydishon/",
         icon: LinkedInIcon,
       },
       {
         name: "X",
-        url: "https://x.com/BartoszJarocki",
+        url: "https://x.com/benydishon",
         icon: XIcon,
       },
     ],
   },
   education: [
     {
-      school: "Wrocław University of Technology",
-      degree: "Bachelor's Degree in Control systems engineering and Robotics",
-      start: "2007",
-      end: "2010",
+      school: "Hindustan Institute of Technology & Science",
+      degree: "Bachelor's of Technology Degree in Computer Science Engineering",
+      start: "2022",
+      end: "2026",
     },
   ],
   work: [
     {
-      company: "Parabol",
-      link: "https://parabol.co",
+      // → is a special character that can be used to represent an arrow
+      company: "Freelance",
+      link: "https://beny.one",
       badges: ["Remote"],
-      title: "Senior Full Stack Developer",
-      logo: ParabolLogo,
-      start: "2021",
+      title: "Full Stack Developer",
+      logo: BenyLogo,
+      start: "2019",
+      end: "Present",
+      description:
+        "Developed websites for clients like G Album, Maxsoft AG and other clients. Technologies: React, Next.js, TypeScript, Figma, Spline, Framer.",
+    },
+    {
+      company: "Maxsoft AG",
+      link: "https://www.maxsoft.ch/",
+      badges: ["Remote"],
+      title: "Frontend Developer",
+      logo: MaxsoftLogo,
+      start: "2023",
       end: "2024",
       description:
-        "Implemented new features, led squad, worked on improving the way developers ship the code, started migration from Emotion to Tailwind CSS and more. Technologies: React, TypeScript, GraphQL",
-    },
-    {
-      company: "Clevertech",
-      link: "https://clevertech.biz",
-      badges: ["Remote"],
-      title: "Lead Android Developer → Full Stack Developer",
-      logo: ClevertechLogo,
-      start: "2015",
-      end: "2021",
-      description:
-        "Created Android mobile apps and led teams for companies like Vision Media, DKMS, or AAA. Built live streaming application for Evercast from scratch. Technologies: Android, Kotlin, React, TypeScript, GraphQL",
-    },
-    {
-      company: "Jojo Mobile",
-      link: "https://bsgroup.eu/",
-      badges: [],
-      title: "Android Developer → Lead Android Developer",
-      logo: JojoMobileLogo,
-      start: "2012",
-      end: "2015",
-      description:
-        "Built an Android team, created Android apps for biggest Polish companies like LOT, Polskie Radio, Agora, PolskaPress",
-    },
-    {
-      company: "Nokia Siemens Networks",
-      link: "https://www.nokia.com",
-      badges: [],
-      title: "C/C++ Developer",
-      logo: NSNLogo,
-      start: "2010",
-      end: "2012",
-      description: "Creating and testing software for LTE base stations",
+        "Created a website for Maxsoft AG based on Switzerland, To showcase their work and services to clients. Technologies: React, Figma, Spline, Framer.",
     },
   ],
+  certification: [
+    {
+      name: "Meta Specialization - Front-End Developer",
+      providerName: "Meta",
+      link: "https://www.coursera.org/account/accomplishments/specialization/certificate/PDL3GAR82CEL",
+      issueDate: "2023",
+      expirationDate: "",
+      certificateId: "PDL3GAR82CEL",
+    },
+    {
+      name: "Meta Specialization - Back-End Developer",
+      providerName: "Meta",
+      link: "https://www.coursera.org/account/accomplishments/specialization/certificate/RTGRUUVVSLBS",
+      issueDate: "2023",
+      expirationDate: "",
+      certificateId: "RTGRUUVVSLBS",
+    },
+    {
+      name: "Meta Certificate - Full-Stack Engineer",
+      providerName: "Meta",
+      link: "https://www.credly.com/badges/69cfb9d7-825e-4d13-88f0-952da25a826b/linked_in_profile",
+      issueDate: "2024",
+      expirationDate: "",
+      certificateId: "69cfb9d7-825e-4d13-88f0-952da25a826b",
+    },
+    {
+      name: "Google Specialization - IT Support",
+      providerName: "Google",
+      link: "https://www.coursera.org/account/accomplishments/specialization/certificate/G2ZSSFQ5UVPT",
+      issueDate: "2024",
+      expirationDate: "",
+      certificateId: "G2ZSSFQ5UVPT",
+    },
+    {
+      name: "Version Control with Git",
+      providerName: "Atlassian",
+      link: "https://www.coursera.org/account/accomplishments/certificate/XLZ7ERRTSR9N",
+      issueDate: "2024",
+      expirationDate: "",
+      certificateId: "XLZ7ERRTSR9N",
+    },
+  ],
+
+  // publication: [
+  //   {
+  //     name: "A Block-Chain Based Approach for Food Supply Chain Management",
+  //     providerName: "IEEE",
+  //     link: "https://ieeexplore.ieee.org/document/9984473",
+  //     issueDate: "12/26/2022",
+  //     description:
+  //       "This review paper examines many elements of food supply chain management and  how blockchain may be used in supply chain management.",
+  //   },
+  // ],
+
+  languages: [
+    "English",
+    "Tamil",
+  ],
   skills: [
+    "Python",
+    "C/C++",
+    "HTML/CSS",
     "JavaScript",
     "TypeScript",
-    "React/Next.js/Remix",
+    "React/Next.js",
     "Node.js",
-    "GraphQL",
-    "Relay",
-    "WebRTC",
+    "Express",
+    "SQL",
+    "PostgresSQL",
+    "MongoDB",
+    "Figma (UI/UX)",
   ],
   projects: [
     {
-      title: "Consultly",
+      title: "G Album Website",
+      techStack: ["Side Project", "Framer", "Figma", "React", "API"],
+      description:
+        "A website for a photo album printing studio to showcase their work and services.",
+      logo: GAlbumLogo,
+      link: {
+        label: "galbum.net",
+        href: "https://galbum.net/",
+      },
+    },
+    {
+      title: "Maxsoft AG Website",
+      techStack: ["Side Project", "Framer", "Figma", "Spline", "React", "API"],
+      description:
+        "A website for a IT solutions company to showcase their services based on Switzerland.",
+      logo: MaxsoftLogo,
+      link: {
+        label: "maxsoft.ch",
+        href: "https://www.maxsoft.ch/",
+      },
+    },
+    {
+      title: "Beny.one",
+      techStack: ["Side Project", "Framer", "Figma", "React"],
+      description: "My portfolio website to showcase my hobbies and passion. ",
+      logo: BenyLogo,
+      link: {
+        label: "beny.one",
+        href: "https://beny.one/",
+      },
+    },
+    {
+      title: "WatcherAI",
       techStack: [
         "Side Project",
-        "TypeScript",
         "Next.js",
-        "Vite",
-        "GraphQL",
-        "WebRTC",
-      ],
-      description: "A platform to build and grow your online business",
-      logo: ConsultlyLogo,
-      link: {
-        label: "consultly.com",
-        href: "https://consultly.com/",
-      },
-    },
-    {
-      title: "Monito",
-      techStack: ["Side Project", "TypeScript", "Next.js", "Browser Extension"],
-      description:
-        "Browser extension that records everything happening in a web application",
-      logo: MonitoLogo,
-      link: {
-        label: "monito.dev",
-        href: "https://monito.dev/",
-      },
-    },
-    {
-      title: "Jarocki.me",
-      techStack: ["Side Project", "Next.js", "MDX"],
-      description:
-        "My personal website and blog. Built with Next.js and Notion API",
-      logo: JarockiMeLogo,
-      link: {
-        label: "github.com",
-        href: "https://jarocki.me/",
-      },
-    },
-    {
-      title: "Minimal",
-      techStack: ["Side Project", "Next.js", "Puppeteer"],
-      description:
-        "Minimalist calendars, habit trackers and planners generator",
-      logo: Minimal,
-      link: {
-        label: "useminimal.com",
-        href: "https://useminimal.com/",
-      },
-    },
-    {
-      title: "Barepapers",
-      techStack: ["Side Project", "Next.js", "Puppeteer"],
-      description:
-        "Generates beautiful wallpapers using random shapes and gradients",
-      logo: BarepapersLogo,
-      link: {
-        label: "barepapers.com",
-        href: "https://barepapers.com/",
-      },
-    },
-    {
-      title: "Year progress",
-      techStack: ["Side Project", "TypeScript", "Next.js"],
-      description: "Tracks current year progress and displays a countdown",
-      logo: YearProgressLogo,
-      link: {
-        label: "getyearprogress.com",
-        href: "https://getyearprogress.com/",
-      },
-    },
-    {
-      title: "Parabol",
-      techStack: [
-        "Full Stack Developer",
-        "TypeScript",
-        "React",
-        "Node.js",
-        "GraphQL",
+        "shadcn-ui",
+        "Tensorflow (COCO-SSD)",
       ],
       description:
-        "The Agile meeting co-pilot that delivers better meetings with less effort",
-      logo: ParabolLogo,
+        "A platform to detect and track objects in real-time to automate recording using a webcam.",
+      logo: WatcherAILogo,
       link: {
-        label: "github.com",
-        href: "https://parabol.co/",
+        label: "watcher.beny.one",
+        href: "https://watcher.beny.one/",
       },
-    },
-    {
-      title: "Evercast",
-      techStack: [
-        "Lead Frontend Developer",
-
-        "TypeScript",
-        "React",
-        "Node.js",
-        "GraphQL",
-      ],
-      description:
-        "Creative collaboration platform that combines video conferencing and HD media streaming",
-      logo: EvercastLogo,
-      link: {
-        label: "evercast.us",
-        href: "https://www.evercast.us/",
-      },
-    },
-    {
-      title: "Mobile Vikings",
-      techStack: ["Lead Android Developer", "Android", "Kotlin"],
-      description:
-        "Android application for leading virtual mobile operator in Poland",
-      logo: MobileVikingsLogo,
-      link: {
-        label: "mobilevikings.pl",
-        href: "https://mobilevikings.pl/",
-      },
-    },
-    {
-      title: "Howdy",
-      techStack: ["Lead Android Developer", "Android", "Kotlin"],
-      description:
-        "Howdy is a place for you to join communities you care about",
-      logo: Howdy,
-      link: {
-        label: "play.google.com",
-        href: "https://howdy.co/",
-      },
-    },
-    {
-      title: "Tastycloud",
-      techStack: ["Lead Android Developer", "Android", "Kotlin"],
-      description:
-        "Android application for managing and displaying restaurant menus in kiosk mode",
-      logo: TastyCloudLogo,
-      link: {
-        label: "tastycloud.fr",
-        href: "https://www.tastycloud.fr/",
-      },
-    },
-    {
-      title: "Ambit",
-      techStack: ["Lead Android Developer", "Android", "Kotlin"],
-      description:
-        "Android application that helps with sharing your contact details",
-      logo: AmbitLogo,
-    },
-    {
-      title: "Bim",
-      techStack: ["Lead Android Developer", "Android", "Kotlin"],
-      description:
-        "Android application that helps with booking a table in a restaurants",
-      logo: BimLogo,
-    },
-    {
-      title: "Canal Digital GO",
-      techStack: ["Lead Android Developer", "Android", "Kotlin"],
-      description:
-        "Video streaming mobile application for Canal Digital subscribers",
-      logo: CDGOLogo,
     },
   ],
 } as const;
