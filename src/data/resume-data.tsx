@@ -7,7 +7,7 @@ import {
 import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons";
 
 export const RESUME_DATA = {
-  name: "Beny Dishon K",
+  name: "Beny Dishon",
   initials: "BD",
   location: "Chennai, India, IST (UTC+5:30)",
   locationLink: "https://www.google.com/maps/place/Chennai",
@@ -73,20 +73,12 @@ export const RESUME_DATA = {
   ],
   certification: [
     {
-      name: "Meta Specialization - Front-End Developer",
-      providerName: "Meta",
-      link: "https://www.coursera.org/account/accomplishments/specialization/certificate/PDL3GAR82CEL",
-      issueDate: "2023",
+      name: "Google Specialization - IT Support",
+      providerName: "Google",
+      link: "https://www.coursera.org/account/accomplishments/specialization/certificate/G2ZSSFQ5UVPT",
+      issueDate: "2024",
       expirationDate: "",
-      certificateId: "PDL3GAR82CEL",
-    },
-    {
-      name: "Meta Specialization - Back-End Developer",
-      providerName: "Meta",
-      link: "https://www.coursera.org/account/accomplishments/specialization/certificate/RTGRUUVVSLBS",
-      issueDate: "2023",
-      expirationDate: "",
-      certificateId: "RTGRUUVVSLBS",
+      certificateId: "G2ZSSFQ5UVPT",
     },
     {
       name: "Meta Certificate - Full-Stack Engineer",
@@ -97,18 +89,26 @@ export const RESUME_DATA = {
       certificateId: "69cfb9d7-825e-4d13-88f0-952da25a826b",
     },
     {
-      name: "Google Specialization - IT Support",
-      providerName: "Google",
-      link: "https://www.coursera.org/account/accomplishments/specialization/certificate/G2ZSSFQ5UVPT",
-      issueDate: "2024",
+      name: "Meta Specialization - Back-End Developer",
+      providerName: "Meta",
+      link: "https://www.coursera.org/account/accomplishments/specialization/certificate/RTGRUUVVSLBS",
+      issueDate: "2023",
       expirationDate: "",
-      certificateId: "G2ZSSFQ5UVPT",
+      certificateId: "RTGRUUVVSLBS",
+    },
+    {
+      name: "Meta Specialization - Front-End Developer",
+      providerName: "Meta",
+      link: "https://www.coursera.org/account/accomplishments/specialization/certificate/PDL3GAR82CEL",
+      issueDate: "2023",
+      expirationDate: "",
+      certificateId: "PDL3GAR82CEL",
     },
     {
       name: "Version Control with Git",
       providerName: "Atlassian",
       link: "https://www.coursera.org/account/accomplishments/certificate/XLZ7ERRTSR9N",
-      issueDate: "2024",
+      issueDate: "2023",
       expirationDate: "",
       certificateId: "XLZ7ERRTSR9N",
     },
@@ -125,10 +125,7 @@ export const RESUME_DATA = {
   //   },
   // ],
 
-  languages: [
-    "English",
-    "Tamil",
-  ],
+  languages: ["English", "Tamil"],
   skills: [
     "Python",
     "C/C++",
