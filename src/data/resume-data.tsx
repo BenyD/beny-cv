@@ -3,11 +3,12 @@ import {
   GAlbumLogo,
   MaxsoftLogo,
   WatcherAILogo,
+  CGPALogo,
 } from "@/images/logos";
 import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons";
 
 export const RESUME_DATA = {
-  name: "Beny Dishon",
+  name: "Beny Dishon K",
   initials: "BD",
   location: "Chennai, India, IST (UTC+5:30)",
   locationLink: "https://www.google.com/maps/place/Chennai",
@@ -16,10 +17,11 @@ export const RESUME_DATA = {
     "As a student and aspiring Full Stack Developer, I have acquired multiple certifications in full stack development. Additionally, I have completed various freelance projects. My current expertise revolves around TypeScript, NextJS, Node.js, and MongoDB. I am continuously seeking new opportunities to expand my knowledge and skills.",
   avatarUrl:
     "https://media.licdn.com/dms/image/D5603AQFj_Qtbn6tt8g/profile-displayphoto-shrink_200_200/0/1705775112790?e=2147483647&v=beta&t=Nc0xGxZJR7OZKo3fbKh4ty6jliwPi19kE9CbDEvkqR4",
-  personalWebsiteUrl: "https://beny.one",
+  personalWebsiteUrl: "https://www.beny.one",
   contact: {
     email: "benydishon@gmail.com",
     tel: "+919884819912",
+    website: "https://www.beny.one/",
     social: [
       {
         name: "GitHub",
@@ -55,7 +57,7 @@ export const RESUME_DATA = {
       title: "Full Stack Developer",
       logo: BenyLogo,
       start: "2019",
-      end: "Present",
+      end: "2023",
       description:
         "Developed websites for clients like G Album, Maxsoft AG and other clients. Technologies: React, Next.js, TypeScript, Figma, Spline, Framer.",
     },
@@ -63,15 +65,31 @@ export const RESUME_DATA = {
       company: "Maxsoft AG",
       link: "https://www.maxsoft.ch/",
       badges: ["Remote"],
-      title: "Frontend Developer",
+      title: "Fullstack Developer",
       logo: MaxsoftLogo,
       start: "2023",
-      end: "2024",
+      end: "Present",
       description:
-        "Created a website for Maxsoft AG based on Switzerland, To showcase their work and services to clients. Technologies: React, Figma, Spline, Framer.",
+        "Developed multiple website with different uses cases for the switzerland based company.",
     },
   ],
   certification: [
+    {
+      name: "Microsoft Certified: Security, Compliance, and Identity Fundamentals",
+      providerName: "Microsoft",
+      link: "https://learn.microsoft.com/en-gb/users/benyd/credentials/e0e79b7cc9d3a4b1",
+      issueDate: "2024",
+      expirationDate: "",
+      certificateId: "E0E79B7CC9D3A4B1",
+    },
+    {
+      name: "Microsoft Cybersecurity Analyst Specialization",
+      providerName: "Microsoft",
+      link: "https://www.coursera.org/account/accomplishments/specialization/certificate/E6MFAJ9UMJYW",
+      issueDate: "2024",
+      expirationDate: "",
+      certificateId: "E6MFAJ9UMJYW",
+    },
     {
       name: "Google Specialization - IT Support",
       providerName: "Google",
@@ -143,9 +161,9 @@ export const RESUME_DATA = {
   projects: [
     {
       title: "G Album Website",
-      techStack: ["Side Project", "Framer", "Figma", "React", "API"],
+      techStack: ["Framer", "Figma", "React", "API"],
       description:
-        "A website for a photo album printing studio to showcase their work and services.",
+        "Website for a photo album printing studio to showcase work and services.",
       logo: GAlbumLogo,
       link: {
         label: "galbum.net",
@@ -153,10 +171,27 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "Maxsoft AG Website",
-      techStack: ["Side Project", "Framer", "Figma", "Spline", "React", "API"],
+      title: "G Album Photo Gallery & Admin Dashboard",
+      techStack: [
+        "NextJS",
+        "TypeScript",
+        "shadcn-ui",
+        "Tailwind CSS",
+        "Firebase",
+        "API",
+      ],
       description:
-        "A website for a IT solutions company to showcase their services based on Switzerland.",
+        "Gallery site to showcase albums with admin dashboard for managing images.",
+      logo: GAlbumLogo,
+      link: {
+        label: "photos.galbum.net",
+        href: "https://photos.galbum.net/",
+      },
+    },
+    {
+      title: "Maxsoft AG Website",
+      techStack: ["Framer", "Figma", "Spline", "React", "API"],
+      description: "Website for an IT solutions company based in Switzerland.",
       logo: MaxsoftLogo,
       link: {
         label: "maxsoft.ch",
@@ -165,8 +200,8 @@ export const RESUME_DATA = {
     },
     {
       title: "Beny.one",
-      techStack: ["Side Project", "Framer", "Figma", "React"],
-      description: "My portfolio website to showcase my hobbies and passion. ",
+      techStack: ["Framer", "Figma", "React"],
+      description: "My developer portfolio website to showcase my projects.",
       logo: BenyLogo,
       link: {
         label: "beny.one",
@@ -174,15 +209,26 @@ export const RESUME_DATA = {
       },
     },
     {
+      title: "CGPA Calculator",
+      techStack: ["NextJS", "Tailwind CSS", "shadcn-ui", "TypeScript"],
+      description:
+        "Web application to calculate CGPA with user-friendly interface.",
+      logo: CGPALogo,
+      link: {
+        label: "cgpa.beny.one",
+        href: "https://cgpa.beny.one/",
+      },
+    },
+    {
       title: "WatcherAI",
       techStack: [
-        "Side Project",
-        "Next.js",
+        "NextJS",
         "shadcn-ui",
+        "Tailwind CSS",
         "Tensorflow (COCO-SSD)",
       ],
       description:
-        "A platform to detect and track objects in real-time to automate recording using a webcam.",
+        "Platform to detect and track objects in real-time using a webcam.",
       logo: WatcherAILogo,
       link: {
         label: "watcher.beny.one",
