@@ -104,7 +104,7 @@ export const CommandMenu = React.memo(({ links }: Props) => {
 
   return (
     <>
-      <p className="fixed bottom-0 left-0 right-0 hidden border-t border-t-muted bg-white p-1 text-center text-sm text-muted-foreground print:hidden xl:block dark:border-neutral-600 dark:border-neutral-700 dark:bg-neutral-700 dark:bg-neutral-900  dark:text-neutral-300">
+      <p className="fixed bottom-0 left-0 right-0 hidden border-t border-t-muted bg-white p-1 text-center text-sm text-muted-foreground print:hidden xl:block dark:border-neutral-600  dark:bg-neutral-900  dark:text-neutral-300">
         Press {getCommandKey()} to open the command menu
       </p>
       <Button
