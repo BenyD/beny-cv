@@ -15,8 +15,6 @@ export const RESUME_DATA = {
   about: "Student focused on building products with extra attention to detail",
   summary:
     "As a student and aspiring Full Stack Developer, I have acquired multiple certifications in full stack development. Additionally, I have completed various freelance projects. My current expertise revolves around TypeScript, NextJS, Node.js, and MongoDB. I am continuously seeking new opportunities to expand my knowledge and skills.",
-  avatarUrl:
-    "https://media.licdn.com/dms/image/D5603AQFj_Qtbn6tt8g/profile-displayphoto-shrink_200_200/0/1705775112790?e=2147483647&v=beta&t=Nc0xGxZJR7OZKo3fbKh4ty6jliwPi19kE9CbDEvkqR4",
   personalWebsiteUrl: "https://www.beny.one",
   contact: {
     email: "benydishon@gmail.com",
@@ -50,7 +48,6 @@ export const RESUME_DATA = {
   ],
   work: [
     {
-      // → is a special character that can be used to represent an arrow
       company: "Freelance",
       link: "https://beny.one",
       badges: ["Remote"],
@@ -131,18 +128,6 @@ export const RESUME_DATA = {
       certificateId: "XLZ7ERRTSR9N",
     },
   ],
-
-  // publication: [
-  //   {
-  //     name: "A Block-Chain Based Approach for Food Supply Chain Management",
-  //     providerName: "IEEE",
-  //     link: "https://ieeexplore.ieee.org/document/9984473",
-  //     issueDate: "12/26/2022",
-  //     description:
-  //       "This review paper examines many elements of food supply chain management and  how blockchain may be used in supply chain management.",
-  //   },
-  // ],
-
   languages: ["English", "Tamil"],
   skills: [
     "Python",
