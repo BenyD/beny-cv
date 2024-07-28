@@ -11,7 +11,16 @@ import {
   CommandSeparator,
 } from "@/components/ui/command";
 import { Button } from "./ui/button";
-import { CommandIcon, Menu, Apple, Monitor } from "lucide-react";
+import {
+  CommandIcon,
+  Menu,
+  Apple,
+  Monitor,
+  Sun,
+  Moon,
+  Laptop,
+} from "lucide-react";
+import { useTheme } from "next-themes";
 
 interface Props {
   links: { url: string; title: string }[];
@@ -21,6 +30,7 @@ export const CommandMenu = React.memo(({ links }: Props) => {
   const [open, setOpen] = React.useState(false);
   const [os, setOs] = React.useState<string>("");
   const [isMobile, setIsMobile] = React.useState(false);
+  const { theme, setTheme } = useTheme();
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -77,14 +87,14 @@ export const CommandMenu = React.memo(({ links }: Props) => {
         );
       case "Windows":
         return (
-          <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+          <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100 dark:border-neutral-600 dark:bg-neutral-700  dark:text-neutral-300">
             <span className="text-xs">Ctrl</span>
             <span>+ </span>J
           </kbd>
         );
       default:
         return (
-          <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+          <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100 dark:border-neutral-600 dark:bg-neutral-700  dark:text-neutral-300">
             <span className="text-xs">⌘/Ctrl</span>
             <span>+ </span>J
           </kbd>
@@ -94,7 +104,7 @@ export const CommandMenu = React.memo(({ links }: Props) => {
 
   return (
     <>
-      <p className="fixed bottom-0 left-0 right-0 hidden border-t border-t-muted bg-white p-1 text-center text-sm text-muted-foreground print:hidden xl:block">
+      <p className="fixed bottom-0 left-0 right-0 hidden border-t border-t-muted bg-white p-1 text-center text-sm text-muted-foreground print:hidden xl:block dark:border-neutral-600 dark:border-neutral-700 dark:bg-neutral-700 dark:bg-neutral-900  dark:text-neutral-300">
         Press {getCommandKey()} to open the command menu
       </p>
       <Button
@@ -132,6 +142,20 @@ export const CommandMenu = React.memo(({ links }: Props) => {
                 <span>{title}</span>
               </CommandItem>
             ))}
+          </CommandGroup>
+          <CommandGroup heading="Themes">
+            <CommandItem onSelect={() => setTheme("system")}>
+              <Monitor className="mr-2 h-4 w-4" />
+              <span>System</span>
+            </CommandItem>
+            <CommandItem onSelect={() => setTheme("light")}>
+              <Sun className="mr-2 h-4 w-4" />
+              <span>Light</span>
+            </CommandItem>
+            <CommandItem onSelect={() => setTheme("dark")}>
+              <Moon className="mr-2 h-4 w-4" />
+              <span>Dark</span>
+            </CommandItem>
           </CommandGroup>
           <CommandSeparator />
         </CommandList>

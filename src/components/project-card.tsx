@@ -18,10 +18,10 @@ interface Props {
 export const ProjectCard = React.memo(
   ({ title, description, tags, link }: Props) => {
     return (
-      <Card className="flex flex-col overflow-hidden border border-muted p-3">
+      <Card className="flex flex-col overflow-hidden border p-3 dark:border-neutral-700 dark:bg-neutral-900">
         <CardHeader>
           <div className="space-y-1">
-            <CardTitle className="text-base">
+            <CardTitle className="text-base dark:text-white">
               {link ? (
                 <a
                   href={link}
@@ -36,13 +36,13 @@ export const ProjectCard = React.memo(
                 title
               )}
             </CardTitle>
-            <div className="hidden font-mono text-xs underline print:visible">
+            <div className="hidden font-mono text-xs underline print:visible dark:text-neutral-400">
               {link
                 ?.replace("https://", "")
                 .replace("www.", "")
                 .replace("/", "")}
             </div>
-            <CardDescription className="font-mono text-xs print:text-[10px]">
+            <CardDescription className="font-mono text-xs print:text-[10px] dark:text-neutral-400">
               {description}
             </CardDescription>
           </div>
@@ -51,9 +51,9 @@ export const ProjectCard = React.memo(
           <div className="mt-2 flex flex-wrap gap-1">
             {tags.map((tag) => (
               <Badge
-                className="px-1 py-0 text-[10px] print:px-1 print:py-0.5 print:text-[8px] print:leading-tight"
-                variant="secondary"
+                className="px-1 py-0 text-[10px] print:px-1 print:py-0.5 print:text-[8px] print:leading-tight dark:bg-neutral-700 dark:text-neutral-300"
                 key={tag}
+                variant="secondary"
               >
                 {tag}
               </Badge>

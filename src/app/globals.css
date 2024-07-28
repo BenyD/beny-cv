@@ -71,10 +71,20 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground dark:bg-neutral-900;
   }
 }
 
 .print-force-new-page {
   page-break-before: always;
+}
+
+.cmdk-item {
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease; /* Adjust transition */
+}
+
+.cmdk-item:hover {
+  backdrop-filter: none; /* Remove any blur effect on hover */
 }
