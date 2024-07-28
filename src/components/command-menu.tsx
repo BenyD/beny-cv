@@ -80,7 +80,7 @@ export const CommandMenu = React.memo(({ links }: Props) => {
     switch (os) {
       case "MacOS":
         return (
-          <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+          <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100 dark:border-neutral-600 dark:bg-neutral-700  dark:text-neutral-300">
             <span className="text-xs">⌘</span>
             <span>+ </span>J
           </kbd>
