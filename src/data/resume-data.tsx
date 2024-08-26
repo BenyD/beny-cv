@@ -78,7 +78,7 @@ export const RESUME_DATA = {
     },
     {
       name: "Google Specialization - IT Support",
-      providerName: "JanGoogle",
+      providerName: "Google",
       link: "https://www.coursera.org/account/accomplishments/specialization/certificate/G2ZSSFQ5UVPT",
       issueDate: "Jan 2024",
       expirationDate: "",

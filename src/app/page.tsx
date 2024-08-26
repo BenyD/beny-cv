@@ -157,7 +157,7 @@ export default function Page() {
                     {work.start} - {work.end ?? "Present"}
                   </div>
                 </div>
-                <h4 className="font-mono text-sm leading-none print:text-[12px] dark:text-neutral-400">
+                <h4 className="font-mono text-sm leading-none print:text-[12px] dark:text-neutral-300">
                   {work.title}
                 </h4>
               </CardHeader>
@@ -215,7 +215,7 @@ export default function Page() {
                       : ""}
                   </div>
                 </div>
-                <h4 className="font-mono text-sm leading-none dark:text-neutral-400">
+                <h4 className="font-mono text-sm leading-none dark:text-neutral-300">
                   {certification.providerName}
                 </h4>
               </CardHeader>
