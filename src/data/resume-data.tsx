@@ -11,10 +11,10 @@ export const RESUME_DATA = {
   name: "Beny Dishon K",
   initials: "BD",
   location: "Chennai, India, IST (UTC+5:30)",
-  locationLink: "https://www.google.com/maps/place/Chennai",
+  locationLink: "https://www.google.com/maps/place/chennai",
   about: "Student focused on building products with extra attention to detail",
   summary:
-    "As a student and aspiring Full Stack Developer, I have acquired multiple certifications in full stack development. Additionally, I have completed various freelance projects. My current expertise revolves around TypeScript, NextJS, Node.js, and MongoDB. I am continuously seeking new opportunities to expand my knowledge and skills.",
+    "Currently a student and aspiring software engineer, I focus on innovative full-stack development. I've earned certifications from Microsoft, Google, and Meta, and contributed to various small-scale projects. Passionate about creating new things and continuously learning, I'm driven to enhance lives through technology.",
   personalWebsiteUrl: "https://www.beny.one",
   contact: {
     email: "benydishon@gmail.com",
@@ -48,21 +48,10 @@ export const RESUME_DATA = {
   ],
   work: [
     {
-      company: "Freelance",
-      link: "https://beny.one",
-      badges: ["Remote"],
-      title: "Full Stack Developer",
-      logo: BenyLogo,
-      start: "2019",
-      end: "2023",
-      description:
-        "Developed websites for clients like G Album, Maxsoft AG and other clients. Technologies: React, Next.js, TypeScript, Figma, Spline, Framer.",
-    },
-    {
       company: "Maxsoft AG",
       link: "https://www.maxsoft.ch/",
       badges: ["Remote"],
-      title: "Fullstack Developer",
+      title: "Software Engineer",
       logo: MaxsoftLogo,
       start: "2023",
       end: "Present",
@@ -130,18 +119,20 @@ export const RESUME_DATA = {
   ],
   languages: ["English", "Tamil"],
   skills: [
-    "Python",
-    "C/C++",
-    "HTML/CSS",
+    "React",
+    "Next.js",
     "JavaScript",
     "TypeScript",
-    "React/Next.js",
     "Node.js",
     "Express",
-    "SQL",
-    "PostgresSQL",
     "MongoDB",
-    "Figma (UI/UX)",
+    "Java",
+    "Python",
+    "Git",
+    "Docker",
+    "Kubernetes",
+    "Testing",
+    "UI/UX",
   ],
   projects: [
     {
