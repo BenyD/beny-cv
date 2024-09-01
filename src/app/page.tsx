@@ -10,7 +10,8 @@ import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
 import { PrintDrawer } from "@/components/print-drawer";
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
 
 // Correctly typing dynamic imports
 const ProjectCard = dynamic(
@@ -134,9 +135,15 @@ export default function Page() {
         </div>
         <Section>
           <h2 className="text-xl font-bold dark:text-white">About</h2>
-          <p className="text-pretty font-mono text-sm text-muted-foreground print:text-[12px] dark:text-neutral-400">
+          <ReactMarkdown 
+            className="text-pretty font-mono text-sm text-muted-foreground print:text-[12px] dark:text-neutral-400"
+            components={{
+              strong: ({node, ...props}) => <span className="text-foreground dark:text-white" {...props} />,
+              a: ({node, ...props}) => <a className="text-foreground dark:text-white" {...props} />,
+            }}
+          >
             {RESUME_DATA.summary}
-          </p>
+          </ReactMarkdown>
         </Section>
         <Section>
           <h2 className="text-xl font-bold dark:text-white">Work Experience</h2>
@@ -264,16 +271,17 @@ export default function Page() {
         <Section className="print-force-new-page scroll-mb-16">
           <h2 className="text-xl font-bold dark:text-white">Projects</h2>
           <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
-            {isClient && RESUME_DATA.projects.map((project) => (
-              <ProjectCard
-                key={project.title}
-                title={project.title}
-                description={project.description}
-                tags={project.techStack}
-                link={"link" in project ? project.link.href : undefined}
-                logo={project.logo}
-              />
-            ))}
+            {isClient &&
+              RESUME_DATA.projects.map((project) => (
+                <ProjectCard
+                  key={project.title}
+                  title={project.title}
+                  description={project.description}
+                  tags={project.techStack}
+                  link={"link" in project ? project.link.href : undefined}
+                  logo={project.logo}
+                />
+              ))}
           </div>
         </Section>
       </section>
