@@ -16,12 +16,12 @@ export const RESUME_DATA = {
   about:
     "Software Engineer and Full Stack Developer. Passionate about innovation and learning. Actively building solutions that enhance lives worldwide.",
   summary:
-    "In 2024, I continued my journey as a software engineer, focusing on innovative full-stack development. I specialize in building and scaling impactful solutions, leveraging my diverse skill set. I've completed [multiple certifications from Microsoft, Google, and Meta](#certifications) and contributed to [various small-scale projects](https://github.com/BenyD). I love creating new things and constantly strive to learn. My work is driven by the goal of enhancing lives through technology. Complete information can be found in my [CV](https://cv.beny.one/).",
+    "In 2024, I continued my journey as a software engineer, focusing on innovative full-stack development. I specialize in building and scaling impactful solutions, leveraging my diverse skill set. I've completed [multiple certifications from Microsoft, Google, and Meta](#certifications) and contributed to [various small-scale projects](https://github.com/BenyD). I love creating new things and constantly strive to learn. My work is driven by the goal of enhancing lives through technology. Complete information can be found in my [personal website](https://www.beny.one/).",
   personalWebsiteUrl: "https://www.beny.one",
   contact: {
     email: "benydishon@gmail.com",
     tel: "+919884819912",
-    website: "https://www.beny.one/",
+    website: "https://www.beny.one",
     social: [
       {
         name: "GitHub",
@@ -143,6 +143,34 @@ export const RESUME_DATA = {
     "Cybersecurity",
   ],
   projects: [
+    {
+      title: "Chat Collect",
+      href: "https://chatcollect.com",
+      dates: "Jan 2024 - Feb 2024",
+      active: true,
+      description:
+        "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "PostgreSQL",
+        "Prisma",
+        "TailwindCSS",
+        "Stripe",
+        "Shadcn UI",
+        "Magic UI",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://chatcollect.com",
+          icon: <GlobeIcon className="size-3" />,
+        },
+      ],
+      image: "",
+      video:
+        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
+    },
     {
       title: "Chat Collect",
       href: "https://chatcollect.com",

@@ -42,9 +42,12 @@ export function ProjectCard({
 }: Props) {
   return (
     <Card
-      className={
-        "flex h-full flex-col overflow-hidden border transition-all duration-300 ease-out hover:shadow-lg"
-      }
+      className={cn(
+        "flex h-full flex-col overflow-hidden border border-neutral-300 transition-all duration-300 ease-out hover:shadow-lg",
+        "bg-white dark:bg-neutral-900",
+        "dark:border-neutral-700 dark:hover:border-neutral-400",
+        className,
+      )}
     >
       <Link
         href={href || "#"}

@@ -19,28 +19,33 @@ const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
   const [isClient, setIsClient] = useState(false);
+  const [currentTime, setCurrentTime] = useState("");
 
   useEffect(() => {
     setIsClient(true);
   }, []);
 
   useEffect(() => {
-    const style = document.createElement("style");
-    style.textContent = `
-      @media print {
-        body { -webkit-print-color-adjust: exact; }
-        .print\\:hidden { display: none !important; }
-      }
-    `;
-    document.head.appendChild(style);
-    return () => {
-      document.head.removeChild(style);
-    };
+    const timer = setInterval(() => {
+      const now = new Date();
+      const options: Intl.DateTimeFormatOptions = {
+        timeZone: "Asia/Kolkata",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true,
+      };
+      setCurrentTime(
+        now.toLocaleTimeString("en-US", options) + " IST (UTC +5:30)",
+      );
+    }, 1000);
+
+    return () => clearInterval(timer);
   }, []);
 
   return (
-    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
-      <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-4 dark:bg-neutral-900">
+    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 md:p-16">
+      <section className="mx-auto w-full max-w-2xl space-y-8 bg-white dark:bg-neutral-900">
         <div className="flex items-center justify-between">
           <div className="flex-1 space-y-1.5">
             <BlurFadeText
@@ -50,7 +55,7 @@ export default function Page() {
               text={RESUME_DATA.name}
             />
             <BlurFadeText
-              className="max-w-md text-pretty font-mono text-sm text-muted-foreground print:text-[12px] dark:text-neutral-400"
+              className="max-w-md text-pretty font-mono text-sm text-muted-foreground dark:text-neutral-400"
               delay={BLUR_FADE_DELAY * 2}
               text={RESUME_DATA.about}
             />
@@ -69,7 +74,7 @@ export default function Page() {
               </p>
             </BlurFade>
             <BlurFade delay={BLUR_FADE_DELAY * 4}>
-              <div className="flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground print:hidden dark:text-neutral-400">
+              <div className="flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground dark:text-neutral-400">
                 {RESUME_DATA.contact.email && (
                   <Button
                     className="size-8 dark:border-neutral-700 dark:bg-neutral-900 hover:dark:bg-neutral-700"
@@ -122,7 +127,7 @@ export default function Page() {
               </div>
             </BlurFade>
             <BlurFade delay={BLUR_FADE_DELAY * 5}>
-              <div className="hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground print:flex dark:text-neutral-400">
+              <div className="hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground dark:text-neutral-400">
                 {RESUME_DATA.contact.email && (
                   <a href={`mailto:${RESUME_DATA.contact.email}`}>
                     <span className="underline">
@@ -156,7 +161,7 @@ export default function Page() {
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 8}>
             <ReactMarkdown
-              className="text-pretty font-mono text-sm text-muted-foreground print:text-[12px] dark:text-neutral-400"
+              className="text-pretty font-mono text-sm text-muted-foreground dark:text-neutral-400"
               components={{
                 strong: ({ node, ...props }) => (
                   <span
@@ -214,7 +219,7 @@ export default function Page() {
                       <span className="inline-flex gap-x-1">
                         {work.badges.map((badge) => (
                           <Badge
-                            className="align-middle text-xs print:px-1 print:text-[8px] print:leading-tight dark:bg-neutral-700 dark:text-neutral-300"
+                            className="align-middle text-xs dark:bg-neutral-700 dark:text-neutral-300"
                             key={badge}
                             variant="secondary"
                           >
@@ -227,11 +232,11 @@ export default function Page() {
                       {work.start} - {work.end ?? "Present"}
                     </div>
                   </div>
-                  <h4 className="font-mono text-sm leading-none print:text-[12px] dark:text-neutral-300">
+                  <h4 className="font-mono text-sm leading-none dark:text-neutral-300">
                     {work.title}
                   </h4>
                 </CardHeader>
-                <CardContent className="mt-2 text-xs print:text-[10px] dark:text-neutral-400">
+                <CardContent className="mt-2 text-xs dark:text-neutral-400">
                   {work.description}
                 </CardContent>
               </Card>
@@ -261,7 +266,7 @@ export default function Page() {
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent className="mt-2 print:text-[12px] dark:text-neutral-400">
+                <CardContent className="mt-2 dark:text-neutral-400">
                   {education.degree}
                 </CardContent>
               </Card>
@@ -330,7 +335,7 @@ export default function Page() {
             {RESUME_DATA.languages.map((language, id) => (
               <BlurFade key={language} delay={BLUR_FADE_DELAY * 16 + id * 0.05}>
                 <Badge
-                  className="print:text-[10px] dark:bg-neutral-700 dark:text-neutral-300"
+                  className="dark:bg-neutral-700 dark:text-neutral-300"
                   key={language}
                 >
                   {language}
@@ -347,7 +352,7 @@ export default function Page() {
             {RESUME_DATA.skills.map((skill, id) => (
               <BlurFade key={skill} delay={BLUR_FADE_DELAY * 18 + id * 0.05}>
                 <Badge
-                  className="print:text-[10px] dark:bg-neutral-700 dark:text-neutral-300"
+                  className="dark:bg-neutral-700 dark:text-neutral-300"
                   key={skill}
                 >
                   {skill}
@@ -356,7 +361,7 @@ export default function Page() {
             ))}
           </div>
         </Section>
-        <Section className="print-force-new-page scroll-mb-16">
+        <Section className="scroll-mb-16">
           <BlurFade delay={BLUR_FADE_DELAY * 19}>
             <h2 className="text-xl font-bold dark:text-white">Projects</h2>
           </BlurFade>
@@ -384,7 +389,8 @@ export default function Page() {
         </Section>
       </section>
       <footer className="mt-8 text-center text-sm text-gray-500 dark:text-gray-400">
-        © {new Date().getFullYear()} {RESUME_DATA.name}. All rights reserved.
+        <div className="mb-2">{currentTime}</div>© {new Date().getFullYear()}{" "}
+        {RESUME_DATA.name}. All rights reserved.
       </footer>
     </main>
   );
