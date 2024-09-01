@@ -6,6 +6,7 @@ import {
   CGPALogo,
 } from "@/images/logos";
 import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons";
+import { GlobeIcon } from "lucide-react";
 
 export const RESUME_DATA = {
   name: "Beny Dishon K",
@@ -53,7 +54,6 @@ export const RESUME_DATA = {
       link: "https://www.maxsoft.ch/",
       badges: ["Remote"],
       title: "Software Engineer",
-      logo: MaxsoftLogo,
       start: "2023",
       end: "Present",
       description:
@@ -144,80 +144,32 @@ export const RESUME_DATA = {
   ],
   projects: [
     {
-      title: "G Album Website",
-      techStack: ["Framer", "Figma", "React", "API"],
+      title: "Chat Collect",
+      href: "https://chatcollect.com",
+      dates: "Jan 2024 - Feb 2024",
+      active: true,
       description:
-        "Website for a photo album printing studio to showcase work and services.",
-      logo: GAlbumLogo,
-      link: {
-        label: "galbum.net",
-        href: "https://galbum.net/",
-      },
-    },
-    {
-      title: "G Album Gallery",
-      techStack: [
-        "NextJS",
-        "TypeScript",
-        "shadcn-ui",
-        "Tailwind CSS",
-        "Firebase",
-        "API",
+        "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "PostgreSQL",
+        "Prisma",
+        "TailwindCSS",
+        "Stripe",
+        "Shadcn UI",
+        "Magic UI",
       ],
-      description:
-        "Gallery site to showcase albums with admin dashboard for managing images.",
-      logo: GAlbumLogo,
-      link: {
-        label: "photos.galbum.net",
-        href: "https://photos.galbum.net/",
-      },
-    },
-    {
-      title: "Maxsoft AG Website",
-      techStack: ["Framer", "Figma", "Spline", "React", "API"],
-      description: "Website for an IT solutions company based in Switzerland.",
-      logo: MaxsoftLogo,
-      link: {
-        label: "maxsoft.ch",
-        href: "https://www.maxsoft.ch/",
-      },
-    },
-    {
-      title: "Beny.one",
-      techStack: ["Framer", "Figma", "React"],
-      description: "My developer portfolio website to showcase my projects.",
-      logo: BenyLogo,
-      link: {
-        label: "beny.one",
-        href: "https://beny.one/",
-      },
-    },
-    {
-      title: "CGPA Calculator",
-      techStack: ["NextJS", "Tailwind CSS", "shadcn-ui", "TypeScript"],
-      description:
-        "Web application to calculate CGPA with user-friendly interface.",
-      logo: CGPALogo,
-      link: {
-        label: "cgpa.beny.one",
-        href: "https://cgpa.beny.one/",
-      },
-    },
-    {
-      title: "WatcherAI",
-      techStack: [
-        "NextJS",
-        "shadcn-ui",
-        "Tailwind CSS",
-        "Tensorflow (COCO-SSD)",
+      links: [
+        {
+          type: "Website",
+          href: "https://chatcollect.com",
+          icon: <GlobeIcon className="size-3" />,
+        },
       ],
-      description:
-        "Platform to detect and track objects in real-time using a webcam.",
-      logo: WatcherAILogo,
-      link: {
-        label: "watcher.beny.one",
-        href: "https://watcher.beny.one/",
-      },
+      image: "",
+      video:
+        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
     },
   ],
 } as const;

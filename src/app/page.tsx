@@ -360,7 +360,7 @@ export default function Page() {
           <BlurFade delay={BLUR_FADE_DELAY * 19}>
             <h2 className="text-xl font-bold dark:text-white">Projects</h2>
           </BlurFade>
-          <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-[800px] grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-2">
             {isClient &&
               RESUME_DATA.projects.map((project, id) => (
                 <BlurFade
@@ -370,10 +370,13 @@ export default function Page() {
                   <ProjectCard
                     key={project.title}
                     title={project.title}
+                    href={project.href}
                     description={project.description}
-                    tags={project.techStack}
-                    link={"link" in project ? project.link.href : undefined}
-                    logo={project.logo}
+                    dates={project.dates}
+                    tags={project.technologies}
+                    image={project.image}
+                    video={project.video}
+                    links={project.links}
                   />
                 </BlurFade>
               ))}

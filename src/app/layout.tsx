@@ -40,7 +40,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`dark ${inter.className}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`dark ${inter.className}`}
+      suppressHydrationWarning
+    >
       <head />
       <body>
         <ThemeProvider
@@ -50,9 +54,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <TooltipProvider delayDuration={0}>
-            <div className="pb-20"> {/* Add padding to the bottom */}
-              {children}
-            </div>
+            <div className="pb-10">{children}</div>
             <Navbar />
           </TooltipProvider>
         </ThemeProvider>
