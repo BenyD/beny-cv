@@ -12,6 +12,7 @@ import { RESUME_DATA } from "@/data/resume-data";
 import { PrintDrawer } from "@/components/print-drawer";
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
+import { Link, Element, animateScroll as scroll } from "react-scroll";
 
 // Correctly typing dynamic imports
 const ProjectCard = dynamic(
@@ -135,11 +136,32 @@ export default function Page() {
         </div>
         <Section>
           <h2 className="text-xl font-bold dark:text-white">About</h2>
-          <ReactMarkdown 
+          <ReactMarkdown
             className="text-pretty font-mono text-sm text-muted-foreground print:text-[12px] dark:text-neutral-400"
             components={{
-              strong: ({node, ...props}) => <span className="text-foreground dark:text-white" {...props} />,
-              a: ({node, ...props}) => <a className="text-foreground dark:text-white" {...props} />,
+              strong: ({ node, ...props }) => (
+                <span className="text-foreground dark:text-white" {...props} />
+              ),
+              a: ({ node, href, ...props }) =>
+                href === "#certifications" ? (
+                  <Link
+                    to="certifications"
+                    smooth={true}
+                    duration={800}
+                    offset={-50}
+                  >
+                    <span
+                      className="cursor-pointer text-foreground dark:text-white"
+                      {...props}
+                    />
+                  </Link>
+                ) : (
+                  <a
+                    href={href}
+                    className="text-foreground dark:text-white"
+                    {...props}
+                  />
+                ),
             }}
           >
             {RESUME_DATA.summary}
@@ -207,41 +229,53 @@ export default function Page() {
             </Card>
           ))}
         </Section>
-        <Section>
-          <h2 className="text-xl font-bold dark:text-white">Certifications</h2>
-          {RESUME_DATA.certification.map((certification) => (
-            <Card
-              key={certification.name}
-              className="dark:bg-neutral-900 dark:text-neutral-400"
-            >
-              <CardHeader>
-                <div className="flex items-center justify-between gap-x-2 text-base dark:text-white">
-                  <h3 className="font-semibold leading-none">
-                    <a
-                      className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
-                      href={certification.link}
-                      target="_blank"
-                    >
-                      {certification.name}
-                    </a>
-                  </h3>
-                  <div className="text-sm tabular-nums text-gray-500 dark:text-neutral-400">
-                    {certification.issueDate}{" "}
-                    {certification.expirationDate
-                      ? `- ${certification.expirationDate}`
-                      : ""}
+        <Element name="certifications">
+          <Section id="certifications">
+            <h2 className="text-xl font-bold dark:text-white">
+              <Link
+                to="certifications"
+                smooth={true}
+                duration={800}
+                offset={-50}
+                className="cursor-pointer"
+              >
+                Certifications
+              </Link>
+            </h2>
+            {RESUME_DATA.certification.map((certification) => (
+              <Card
+                key={certification.name}
+                className="dark:bg-neutral-900 dark:text-neutral-400"
+              >
+                <CardHeader>
+                  <div className="flex items-center justify-between gap-x-2 text-base dark:text-white">
+                    <h3 className="font-semibold leading-none">
+                      <a
+                        className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
+                        href={certification.link}
+                        target="_blank"
+                      >
+                        {certification.name}
+                      </a>
+                    </h3>
+                    <div className="text-sm tabular-nums text-gray-500 dark:text-neutral-400">
+                      {certification.issueDate}{" "}
+                      {certification.expirationDate
+                        ? `- ${certification.expirationDate}`
+                        : ""}
+                    </div>
                   </div>
-                </div>
-                <h4 className="font-mono text-sm leading-none dark:text-neutral-300">
-                  {certification.providerName}
-                </h4>
-              </CardHeader>
-              <CardContent className="mt-2 dark:text-neutral-400">
-                Certificate ID: {certification.certificateId}
-              </CardContent>
-            </Card>
-          ))}
-        </Section>
+                  <h4 className="font-mono text-sm leading-none dark:text-neutral-300">
+                    {certification.providerName}
+                  </h4>
+                </CardHeader>
+                <CardContent className="mt-2 dark:text-neutral-400">
+                  Certificate ID: {certification.certificateId}
+                </CardContent>
+              </Card>
+            ))}
+          </Section>
+        </Element>
         <Section>
           <h2 className="text-xl font-bold dark:text-white">Languages</h2>
           <div className="flex flex-wrap gap-1">

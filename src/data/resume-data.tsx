@@ -15,7 +15,7 @@ export const RESUME_DATA = {
   about:
     "Software Engineer and Full Stack Developer. Passionate about innovation and learning. Actively building solutions that enhance lives worldwide.",
   summary:
-    "In 2024, I continued my journey as a software engineer, focusing on innovative full-stack development. I specialize in building and scaling impactful solutions, leveraging my diverse skill set. I've completed [multiple certifications from Microsoft, Google, and Meta](#/certification) and contributed to [various small-scale projects](https://github.com/BenyD). I love creating new things and constantly strive to learn. My work is driven by the goal of enhancing lives through technology. Complete information can be found in my [CV](https://cv.beny.one/).",
+    "In 2024, I continued my journey as a software engineer, focusing on innovative full-stack development. I specialize in building and scaling impactful solutions, leveraging my diverse skill set. I've completed [multiple certifications from Microsoft, Google, and Meta](#certifications) and contributed to [various small-scale projects](https://github.com/BenyD). I love creating new things and constantly strive to learn. My work is driven by the goal of enhancing lives through technology. Complete information can be found in my [CV](https://cv.beny.one/).",
   personalWebsiteUrl: "https://www.beny.one",
   contact: {
     email: "benydishon@gmail.com",
