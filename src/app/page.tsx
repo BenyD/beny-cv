@@ -9,7 +9,6 @@ import { Section } from "@/components/ui/section";
 import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
-import { PrintDrawer } from "@/components/print-drawer";
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { Link, Element, animateScroll as scroll } from "react-scroll";
@@ -34,6 +33,23 @@ export default function Page() {
 
   useEffect(() => {
     setIsClient(true);
+  }, []);
+
+  // Add this import at the top of the file
+
+  // Inside the Page component, add this useEffect hook
+  useEffect(() => {
+    const style = document.createElement("style");
+    style.textContent = `
+      @media print {
+        body { -webkit-print-color-adjust: exact; }
+        .print\\:hidden { display: none !important; }
+      }
+    `;
+    document.head.appendChild(style);
+    return () => {
+      document.head.removeChild(style);
+    };
   }, []);
 
   return (
@@ -336,7 +352,6 @@ export default function Page() {
               })),
             ]}
           />
-          <PrintDrawer />
         </>
       )}
     </main>

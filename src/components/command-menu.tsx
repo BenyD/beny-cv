@@ -120,16 +120,6 @@ export const CommandMenu = React.memo(({ links }: Props) => {
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Actions">
-            <CommandItem
-              onSelect={() => {
-                setOpen(false);
-                document.getElementById('print-drawer-trigger')?.click();
-              }}
-            >
-              <span>Save CV</span>
-            </CommandItem>
-          </CommandGroup>
           <CommandGroup heading="Links">
             {links.map(({ url, title }) => (
               <CommandItem
