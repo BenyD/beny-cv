@@ -1,10 +1,12 @@
 import { ThemeProvider } from "@/components/theme-provider";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import React from "react";
 import { RESUME_DATA } from "@/data/resume-data";
+import { Navbar } from "@/components/Navbar"; // Import the Navbar component as a named import
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
@@ -38,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.className} suppressHydrationWarning>
+    <html lang="en" className={`dark ${inter.className}`} suppressHydrationWarning>
       <head />
       <body>
         <ThemeProvider
@@ -47,7 +49,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <TooltipProvider delayDuration={0}>
+            <div className="pb-20"> {/* Add padding to the bottom */}
+              {children}
+            </div>
+            <Navbar />
+          </TooltipProvider>
         </ThemeProvider>
         <SpeedInsights />
         <Analytics />

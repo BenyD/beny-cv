@@ -28,7 +28,7 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 20% 98%;
 
-    --border: 220 13% 91%;
+    --border: 220 13% 70%; /* Light mode border color updated to a darker shade */
     --input: 220 13% 91%;
     --ring: 224 71.4% 4.1%;
 
@@ -60,7 +60,7 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 20% 98%;
 
-    --border: 215 27.9% 16.9%;
+    --border: 0 0% 64.1%; /* Dark mode border color updated to #a3a3a3 */
     --input: 215 27.9% 16.9%;
     --ring: 216 12.2% 83.9%;
   }
@@ -87,4 +87,11 @@
 
 .cmdk-item:hover {
   backdrop-filter: none; /* Remove any blur effect on hover */
+}
+
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 1rem; /* Adjust the margin as needed */
 }
