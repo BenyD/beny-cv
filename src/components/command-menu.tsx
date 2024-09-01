@@ -124,10 +124,10 @@ export const CommandMenu = React.memo(({ links }: Props) => {
             <CommandItem
               onSelect={() => {
                 setOpen(false);
-                window.print();
+                document.getElementById('print-drawer-trigger')?.click();
               }}
             >
-              <span>Print</span>
+              <span>Save CV</span>
             </CommandItem>
           </CommandGroup>
           <CommandGroup heading="Links">

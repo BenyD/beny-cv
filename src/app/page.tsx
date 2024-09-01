@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -7,6 +9,8 @@ import { Section } from "@/components/ui/section";
 import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
+import { PrintDrawer } from "@/components/print-drawer";
+import { useEffect, useState } from 'react';
 
 // Correctly typing dynamic imports
 const ProjectCard = dynamic(
@@ -24,6 +28,12 @@ const CommandMenu = dynamic(
 );
 
 export default function Page() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
       <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-4 dark:bg-neutral-900">
@@ -254,30 +264,39 @@ export default function Page() {
         <Section className="print-force-new-page scroll-mb-16">
           <h2 className="text-xl font-bold dark:text-white">Projects</h2>
           <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
-            {RESUME_DATA.projects.map((project) => (
+            {isClient && RESUME_DATA.projects.map((project) => (
               <ProjectCard
                 key={project.title}
                 title={project.title}
                 description={project.description}
                 tags={project.techStack}
                 link={"link" in project ? project.link.href : undefined}
+                logo={project.logo}
               />
             ))}
           </div>
         </Section>
       </section>
-      <CommandMenu
-        links={[
-          {
-            url: RESUME_DATA.personalWebsiteUrl,
-            title: "Personal Website",
-          },
-          ...RESUME_DATA.contact.social.map((socialMediaLink) => ({
-            url: socialMediaLink.url,
-            title: socialMediaLink.name,
-          })),
-        ]}
-      />
+      <footer className="mt-8 text-center text-sm text-gray-500 dark:text-gray-400">
+        © {new Date().getFullYear()} {RESUME_DATA.name}. All rights reserved.
+      </footer>
+      {isClient && (
+        <>
+          <CommandMenu
+            links={[
+              {
+                url: RESUME_DATA.personalWebsiteUrl,
+                title: "Personal Website",
+              },
+              ...RESUME_DATA.contact.social.map((socialMediaLink) => ({
+                url: socialMediaLink.url,
+                title: socialMediaLink.name,
+              })),
+            ]}
+          />
+          <PrintDrawer />
+        </>
+      )}
     </main>
   );
 }
