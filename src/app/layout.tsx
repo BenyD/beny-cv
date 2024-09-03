@@ -1,10 +1,19 @@
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistSans } from 'geist/font/sans';
+import { Pacifico } from 'next/font/google';
 import "./globals.css";
 import React from "react";
 import LayoutClient from "./layout-client";
 import { metadata } from './metadata';
+
+const pacifico = Pacifico({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+console.log('Pacifico font class:', pacifico.className);
 
 export { metadata };
 
@@ -14,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`dark ${GeistSans.className}`} suppressHydrationWarning>
+    <html lang="en" className={`dark ${GeistSans.className} ${pacifico.className}`} suppressHydrationWarning>
       <body>
         <LayoutClient>{children}</LayoutClient>
         <SpeedInsights />

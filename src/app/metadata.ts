@@ -58,6 +58,6 @@ export const metadata: Metadata = {
   verification: {
     google: "your-google-site-verification-code", // Replace with your Google verification code
     yandex: "your-yandex-verification-code", // Replace with your Yandex verification code
-    bing: "your-bing-verification-code", // Replace with your Bing verification code
+    // Remove the bing property
   },
 };

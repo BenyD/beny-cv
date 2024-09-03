@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const greetings = [
-  'Hello',
-  'வணக்கம்',
-  'Bonjour',
-  'Hola',
-  'こんにちは',
-  'नमस्ते', // Added Hindi greeting
+  "hello",
+  "வணக்கம்",
+  "Bonjour",
+  "Hola",
+  "こんにちは",
+  "नमस्ते",
 ];
 
 const SplashScreen = ({ onFinish }: { onFinish: () => void }) => {
@@ -15,7 +15,7 @@ const SplashScreen = ({ onFinish }: { onFinish: () => void }) => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    const totalDuration = 6000; // Increased to 6 seconds
+    const totalDuration = 6000;
     const intervalDuration = totalDuration / greetings.length;
 
     const interval = setInterval(() => {
@@ -28,10 +28,10 @@ const SplashScreen = ({ onFinish }: { onFinish: () => void }) => {
       });
     }, intervalDuration);
 
-    // Start exit animation after 5.7 seconds
-    const exitTimer = setTimeout(() => setIsVisible(false), totalDuration - 300);
-
-    // Ensure the splash screen ends after 6 seconds
+    const exitTimer = setTimeout(
+      () => setIsVisible(false),
+      totalDuration - 300,
+    );
     const finishTimer = setTimeout(onFinish, totalDuration);
 
     return () => {
@@ -41,30 +41,45 @@ const SplashScreen = ({ onFinish }: { onFinish: () => void }) => {
     };
   }, [onFinish]);
 
+  const sentence = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.5,
+        staggerChildren: 0.08,
+      },
+    },
+  };
+
+  const letter = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+  };
+
   return (
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          className="fixed inset-0 flex items-center justify-center bg-neutral-950"
+          initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-          className="fixed inset-0 flex items-center justify-center bg-gradient-to-br from-neutral-900 to-neutral-800 z-50"
         >
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="text-center"
-            >
-              <h1 className="text-white text-6xl font-thin font-sans">
-                {greetings[currentIndex]}
-              </h1>
-            </motion.div>
-          </AnimatePresence>
+          <motion.h1
+            className="font-pacifico text-6xl font-bold text-foreground"
+            variants={sentence}
+            initial="hidden"
+            animate="visible"
+          >
+            {greetings[currentIndex].split("").map((char, index) => (
+              <motion.span key={`${char}-${index}`} variants={letter}>
+                {char}
+              </motion.span>
+            ))}
+          </motion.h1>
         </motion.div>
       )}
     </AnimatePresence>

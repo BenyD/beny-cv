@@ -95,3 +95,7 @@
   width: 100%;
   margin-bottom: 1rem; /* Adjust the margin as needed */
 }
+
+.font-pacifico {
+  font-family: 'Pacifico', cursive;
+}
