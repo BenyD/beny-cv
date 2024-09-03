@@ -1,38 +1,12 @@
-import { ThemeProvider } from "@/components/theme-provider";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { Analytics } from "@vercel/analytics/react";
-import { Inter } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GeistSans } from 'geist/font/sans';
 import "./globals.css";
 import React from "react";
-import { RESUME_DATA } from "@/data/resume-data";
-import { Navbar } from "@/components/Navbar"; // Import the Navbar component as a named import
+import LayoutClient from "./layout-client";
+import { metadata } from './metadata';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
-
-export const metadata = {
-  metadataBase: new URL(baseUrl),
-  title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
-  description: RESUME_DATA.summary,
-  openGraph: {
-    title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
-    description: RESUME_DATA.summary,
-    type: "website",
-    images: [
-      {
-        url: `${baseUrl}/avatar.jpg`,
-        width: 800,
-        height: 600,
-        alt: `${RESUME_DATA.name}'s avatar`,
-      },
-    ],
-  },
-};
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
+export { metadata };
 
 export default function RootLayout({
   children,
@@ -40,24 +14,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`dark ${inter.className}`}
-      suppressHydrationWarning
-    >
-      <head />
+    <html lang="en" className={`dark ${GeistSans.className}`} suppressHydrationWarning>
       <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <TooltipProvider delayDuration={0}>
-            <div className="pb-10">{children}</div>
-            <Navbar />
-          </TooltipProvider>
-        </ThemeProvider>
+        <LayoutClient>{children}</LayoutClient>
         <SpeedInsights />
         <Analytics />
       </body>

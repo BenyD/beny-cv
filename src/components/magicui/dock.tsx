@@ -1,8 +1,17 @@
 "use client";
 
-import React, { PropsWithChildren, useRef } from "react";
+import React, { PropsWithChildren, useRef, useEffect, useState } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  useTransform,
+  MotionValue,
+  useTransform as transform,
+  clamp,
+} from "framer-motion";
+import { HTMLMotionProps } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 
@@ -33,29 +42,33 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
     },
     ref,
   ) => {
-    const mouseX = useMotionValue(Infinity);
+    const mousex = useMotionValue(Infinity);
 
     const renderChildren = () => {
-      return React.Children.map(children, (child: any) => {
-        return React.cloneElement(child, {
-          mouseX: mouseX,
-          magnification: magnification,
-          distance: distance,
-        });
+      return React.Children.map(children, (child) => {
+        if (React.isValidElement<DockItemProps>(child)) {
+          return React.cloneElement(child, {
+            magnification,
+            distance,
+            direction,
+            mousex,
+          });
+        }
+        return child;
       });
     };
 
     return (
       <motion.div
         ref={ref}
-        onMouseMove={(e) => mouseX.set(e.pageX)}
-        onMouseLeave={() => mouseX.set(Infinity)}
-        {...props}
+        onMouseMove={(e) => mousex.set(e.pageX)}
+        onMouseLeave={() => mousex.set(Infinity)}
         className={cn(dockVariants(), className, {
           "items-start": direction === "top",
           "items-center": direction === "middle",
           "items-end": direction === "bottom",
         })}
+        {...props}
       >
         {renderChildren()}
       </motion.div>
@@ -69,56 +82,160 @@ export interface DockIconProps {
   size?: number;
   magnification?: number;
   distance?: number;
-  mouseX?: any;
+  mousex: MotionValue<number>;
   className?: string;
   children?: React.ReactNode;
-  props?: PropsWithChildren;
 }
 
-const DockIcon = ({
-  size,
-  magnification = DEFAULT_MAGNIFICATION,
-  distance = DEFAULT_DISTANCE,
-  mouseX,
-  className,
-  children,
-  ...props
-}: DockIconProps) => {
-  const ref = useRef<HTMLDivElement>(null);
+const DockIcon = React.forwardRef<HTMLDivElement, DockIconProps>(
+  (
+    {
+      size,
+      magnification = DEFAULT_MAGNIFICATION,
+      distance = DEFAULT_DISTANCE,
+      mousex,
+      className,
+      children,
+      ...props
+    },
+    forwardedRef,
+  ) => {
+    const localRef = useRef<HTMLDivElement>(null);
+    const ref = (forwardedRef as React.RefObject<HTMLDivElement>) || localRef;
 
-  const distanceCalc = useTransform(mouseX, (val: number) => {
-    const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
+    const [bounds, setBounds] = useState({ x: 0, width: 0 });
 
-    return val - bounds.x - bounds.width / 2;
-  });
+    useEffect(() => {
+      if (ref.current) {
+        const updateBounds = () => {
+          const rect = ref.current?.getBoundingClientRect();
+          if (rect) {
+            setBounds({ x: rect.x, width: rect.width });
+          }
+        };
 
-  let widthSync = useTransform(
-    distanceCalc,
-    [-distance, 0, distance],
-    [40, magnification, 40],
-  );
+        updateBounds();
+        window.addEventListener("resize", updateBounds);
+        return () => window.removeEventListener("resize", updateBounds);
+      }
+    }, [ref]);
 
-  let width = useSpring(widthSync, {
-    mass: 0.1,
-    stiffness: 150,
-    damping: 12,
-  });
+    const distanceCalc = useTransform(mousex, (val: number) => {
+      return val - bounds.x - bounds.width / 2;
+    });
 
-  return (
-    <motion.div
-      ref={ref}
-      style={{ width }}
-      className={cn(
-        "flex aspect-square cursor-pointer items-center justify-center rounded-full",
-        className,
-      )}
-      {...props}
-    >
-      {children}
-    </motion.div>
-  );
-};
+    const widthSync = useTransform(
+      distanceCalc,
+      [-distance, 0, distance],
+      [40, magnification, 40],
+    );
+
+    const width = useSpring(widthSync, {
+      mass: 0.1,
+      stiffness: 150,
+      damping: 12,
+    });
+
+    return (
+      <motion.div
+        ref={ref}
+        style={{ width }}
+        className={cn(
+          "flex aspect-square cursor-pointer items-center justify-center rounded-full",
+          className,
+        )}
+        {...props}
+      >
+        {children}
+      </motion.div>
+    );
+  },
+);
 
 DockIcon.displayName = "DockIcon";
 
-export { Dock, DockIcon, dockVariants };
+interface DockItemProps extends Omit<HTMLMotionProps<"div">, "children"> {
+  direction?: "top" | "middle" | "bottom";
+  mousex: MotionValue<number>;
+  magnification?: number;
+  distance?: number;
+  children?: React.ReactNode;
+}
+
+const DockItem = React.forwardRef<HTMLDivElement, DockItemProps>(
+  (
+    {
+      className,
+      mousex,
+      magnification = 1,
+      distance = 0,
+      direction = "bottom",
+      children,
+      ...props
+    },
+    ref,
+  ) => {
+    const [sizeRef, { width }] = useElementSize();
+
+    const position = useMotionValue(0);
+    const scale = useTransform(position, [-1, 0, 1], [1, magnification, 1]);
+    const scaleTransform = useTransform(
+      mousex,
+      [-distance, 0, distance],
+      [-1, 0, 1],
+    );
+
+    useEffect(() => {
+      const unsubscribeX = mousex.on("change", (latestX: number) => {
+        const bounds = width / 2;
+        const distanceValue = latestX - bounds;
+        const clamped = clamp(distanceValue, -distance, distance);
+        position.set(scaleTransform.get());
+      });
+
+      return () => {
+        unsubscribeX();
+      };
+    }, [mousex, width, distance, position, scaleTransform]);
+
+    return (
+      <motion.div
+        ref={ref}
+        style={{
+          scale,
+          transformOrigin: direction === "top" ? "top" : "bottom",
+        }}
+        className={cn("relative flex items-center justify-center", className)}
+        {...props}
+      >
+        {children}
+      </motion.div>
+    );
+  },
+);
+
+DockItem.displayName = "DockItem";
+
+const useElementSize = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [size, setSize] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    const updateSize = () => {
+      if (ref.current) {
+        setSize({
+          width: ref.current.offsetWidth,
+          height: ref.current.offsetHeight,
+        });
+      }
+    };
+
+    updateSize();
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+
+  return [ref, size] as const;
+};
+
+export { Dock, DockIcon, DockItem, dockVariants };
