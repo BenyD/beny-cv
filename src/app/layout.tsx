@@ -7,13 +7,14 @@ import React from "react";
 import LayoutClient from "./layout-client";
 import { metadata } from "./metadata";
 
+export { metadata };
+
 const pacifico = Pacifico({
   weight: "400",
   subsets: ["latin"],
   display: "swap",
+  variable: "--font-pacifico",
 });
-
-export { metadata };
 
 export default function RootLayout({
   children,
@@ -23,10 +24,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark ${GeistSans.className} ${pacifico.className}`}
+      className={`dark ${GeistSans.variable} ${pacifico.variable}`}
       suppressHydrationWarning
     >
-      <body>
+      <head>
+        <link rel="manifest" href="/site.webmanifest" />
+      </head>
+      <body className={GeistSans.className}>
         <LayoutClient>{children}</LayoutClient>
         <SpeedInsights />
         <Analytics />
