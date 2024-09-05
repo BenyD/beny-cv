@@ -28,7 +28,6 @@ const SplashScreen = ({
   }, []);
 
   useEffect(() => {
-    console.log("SplashScreen mounted");
     const wordDuration = duration / greetings.length;
 
     const interval = setInterval(() => {

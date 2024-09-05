@@ -144,27 +144,28 @@ export const RESUME_DATA = {
   ],
   projects: [
     {
-      title: "Chat Collect",
-      href: "https://chatcollect.com",
-      dates: "Jan 2024 - Feb 2024",
+      title: "Beny's CV Website",
+      href: "https://cv.beny.one",
+      dates: "Jan 2024 - Present",
       active: true,
-      description:
-        "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+      description: "My personal CV website showcasing resume and projects.",
       technologies: [
         "Next.js",
         "Typescript",
-        "PostgreSQL",
-        "Prisma",
         "TailwindCSS",
-        "Stripe",
         "Shadcn UI",
         "Magic UI",
       ],
       links: [
         {
           type: "Website",
-          href: "https://chatcollect.com",
+          href: "https://cv.beny.one",
           icon: <GlobeIcon className="size-3" />,
+        },
+        {
+          type: "GitHub",
+          href: "https://github.com/BenyD/beny-cv",
+          icon: <GitHubIcon className="size-3" />,
         },
       ],
       image: "",
