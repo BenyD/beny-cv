@@ -112,10 +112,10 @@ export function Navbar() {
                       href={item.href}
                       className={cn(
                         buttonVariants({ variant: "ghost", size: "icon" }),
-                        "w-10 h-10 rounded-full flex items-center justify-center"
+                        "flex h-10 w-10 items-center justify-center rounded-full",
                       )}
                     >
-                      <item.icon className="w-5 h-5" />
+                      <item.icon className="h-5 w-5" />
                     </Link>
                   </TooltipTrigger>
                   <TooltipContent>
@@ -133,10 +133,10 @@ export function Navbar() {
                       href={social.url}
                       className={cn(
                         buttonVariants({ variant: "ghost", size: "icon" }),
-                        "w-10 h-10 rounded-full flex items-center justify-center"
+                        "flex h-10 w-10 items-center justify-center rounded-full",
                       )}
                     >
-                      <social.icon className="w-5 h-5" />
+                      <social.icon className="h-5 w-5" />
                     </Link>
                   </TooltipTrigger>
                   <TooltipContent>
@@ -152,7 +152,7 @@ export function Navbar() {
                   <div
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "w-10 h-10 rounded-full flex items-center justify-center"
+                      "flex h-10 w-10 items-center justify-center rounded-full",
                     )}
                   >
                     <ModeToggle />

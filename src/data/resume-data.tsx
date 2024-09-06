@@ -1,10 +1,3 @@
-import {
-  BenyLogo,
-  GAlbumLogo,
-  MaxsoftLogo,
-  WatcherAILogo,
-  CGPALogo,
-} from "@/images/logos";
 import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons";
 import { GlobeIcon } from "lucide-react";
 
@@ -149,7 +142,8 @@ export const RESUME_DATA = {
       href: "https://cv.beny.one",
       dates: "January 2024",
       active: true,
-      description: "My personal CV website showcasing resume and projects.",
+      description:
+        "A clean and professional CV website designed to showcase my skills, experience, and projects. It offers a centralized digital resume for potential employers and collaborators.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -175,14 +169,9 @@ export const RESUME_DATA = {
       href: "https://cv.beny.one",
       dates: "January 2024",
       active: true,
-      description: "My personal CV website showcasing resume and projects.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-      ],
+      description:
+        "An interactive personal website that provides insights into my professional journey and projects. It showcases my portfolio and personal brand in an engaging and immersive way.",
+      technologies: ["Framer", "React", "Figma", "API"],
       links: [
         {
           type: "Website",
@@ -201,7 +190,8 @@ export const RESUME_DATA = {
       href: "https://galbum.net",
       dates: "December 2023",
       active: true,
-      description: "A website to upload and share photos with your friends.",
+      description:
+        "A business website for a photo album company to tell their story and showcase products. It focuses on user experience and aesthetic appeal to engage potential clients.",
       technologies: ["Framer", "Figma", "React", "API"],
       links: [
         {
@@ -212,7 +202,7 @@ export const RESUME_DATA = {
       ],
       image: "",
       video:
-        "https://zklyi3yqyaoeuhyg.public.blob.vercel-storage.com/benycv-8VfJfXQD281tm5sJyZN4mAqbmNd7L4.mp4",
+        "https://zklyi3yqyaoeuhyg.public.blob.vercel-storage.com/GALBUM-GfTKWFcYudUJsDprfNvodZHQCQVKsc.mp4",
     },
 
     // G Album Gallery Website
@@ -221,7 +211,8 @@ export const RESUME_DATA = {
       href: "https://photos.galbum.net",
       dates: "March 2024",
       active: true,
-      description: "A website to upload and share photos with your friends.",
+      description:
+        "A comprehensive gallery website hosting thousands of sample photos for client showcase. Includes an admin dashboard for managing the gallery content smoothly and efficiently.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -238,7 +229,7 @@ export const RESUME_DATA = {
       ],
       image: "",
       video:
-        "https://zklyi3yqyaoeuhyg.public.blob.vercel-storage.com/benycv-8VfJfXQD281tm5sJyZN4mAqbmNd7L4.mp4",
+        "https://zklyi3yqyaoeuhyg.public.blob.vercel-storage.com/Photos_Galbum-gLOE3NCcWW8xW6eQYO0x3FXwRS5mvL.mp4",
     },
 
     // RapidResume Website
@@ -247,7 +238,8 @@ export const RESUME_DATA = {
       href: "https://rapidresume.beny.one",
       dates: "March 2024",
       active: true,
-      description: "A website to create your resume in minutes.",
+      description:
+        "A resume builder for the Indian market with ATS compliance in mind. Users can create professional resumes in minutes with built-in ATS scoring.",
       technologies: ["Next.js", "React", "Redux", "Typescript", "TailwindCSS"],
       links: [
         {
@@ -272,14 +264,9 @@ export const RESUME_DATA = {
       href: "https://watcher.beny.one",
       dates: "December 2023",
       active: true,
-      description: "A website to upload and share photos with your friends.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "TailwindCSS",
-        "Tensorflow",
-        "COCO-SSD",
-      ],
+      description:
+        "A simple web app for students to calculate their CGPA accurately. Provides a clean and intuitive user interface for fast and reliable results.",
+      technologies: ["Next.js", "Typescript", "TailwindCSS", "Shadcn UI"],
       links: [
         {
           type: "Website",
@@ -303,7 +290,8 @@ export const RESUME_DATA = {
       href: "https://watcher.beny.one",
       dates: "December 2023",
       active: true,
-      description: "A website to upload and share photos with your friends.",
+      description:
+        "A web app demonstrating object detection technology for enhancing surveillance systems. It offers a unique approach to improving traditional security cameras.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -334,8 +322,61 @@ export const RESUME_DATA = {
       href: "https://rapidresume.beny.one",
       dates: "March 2024",
       active: true,
-      description: "A website to create your resume in minutes.",
-      technologies: ["Next.js", "React", "Redux", "Typescript", "TailwindCSS"],
+      description:
+        "A corporate website for a Swiss IT company, showcasing their services and expertise. Provides an interactive and professional experience for potential clients.",
+      technologies: ["Framer", "Figma", "Spline", "React", "API"],
+      links: [
+        {
+          type: "Website",
+          href: "https://rapidresume.beny.one",
+          icon: <GlobeIcon className="size-3" />,
+        },
+        {
+          type: "GitHub",
+          href: "https://github.com/BenyD/RapidResume",
+          icon: <GitHubIcon className="size-3" />,
+        },
+      ],
+      image: "",
+      video:
+        "https://zklyi3yqyaoeuhyg.public.blob.vercel-storage.com/benycv-8VfJfXQD281tm5sJyZN4mAqbmNd7L4.mp4",
+    },
+
+    // Advisory AG Website
+    {
+      title: "Advisory AG",
+      href: "https://rapidresume.beny.one",
+      dates: "March 2024",
+      active: true,
+      description:
+        "An informative website for an insurance firm, highlighting their services and unique approaches. Focuses on trust and transparency to engage potential clients.",
+      technologies: ["Framer", "Figma", "Spline", "React", "API"],
+      links: [
+        {
+          type: "Website",
+          href: "https://rapidresume.beny.one",
+          icon: <GlobeIcon className="size-3" />,
+        },
+        {
+          type: "GitHub",
+          href: "https://github.com/BenyD/RapidResume",
+          icon: <GitHubIcon className="size-3" />,
+        },
+      ],
+      image: "",
+      video:
+        "https://zklyi3yqyaoeuhyg.public.blob.vercel-storage.com/benycv-8VfJfXQD281tm5sJyZN4mAqbmNd7L4.mp4",
+    },
+
+    // Advisory AG Website
+    {
+      title: "Terra Trade GmbH",
+      href: "https://rapidresume.beny.one",
+      dates: "March 2024",
+      active: true,
+      description:
+        "A website for a consultancy specializing in sustainable investments and agricultural consulting. It promotes their expertise and environmentally conscious solutions.",
+      technologies: ["Framer", "Figma", "Spline", "React", "API"],
       links: [
         {
           type: "Website",
@@ -359,8 +400,9 @@ export const RESUME_DATA = {
       href: "https://rapidresume.beny.one",
       dates: "March 2024",
       active: true,
-      description: "A website to create your resume in minutes.",
-      technologies: ["Next.js", "React", "Redux", "Typescript", "TailwindCSS"],
+      description:
+        "A dynamic website for a football club to showcase their team and recruit new players. Includes team profiles, match highlights, and an interactive joining section.",
+      technologies: ["Framer", "Figma", "React", "API"],
       links: [
         {
           type: "Website",
