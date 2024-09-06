@@ -143,10 +143,11 @@ export const RESUME_DATA = {
     "Cybersecurity",
   ],
   projects: [
+    // Beny's CV Website
     {
       title: "Beny's CV Website",
       href: "https://cv.beny.one",
-      dates: "Jan 2024 - Present",
+      dates: "January 2024",
       active: true,
       description: "My personal CV website showcasing resume and projects.",
       technologies: [
@@ -162,9 +163,213 @@ export const RESUME_DATA = {
           href: "https://cv.beny.one",
           icon: <GlobeIcon className="size-3" />,
         },
+      ],
+      image: "",
+      video:
+        "https://zklyi3yqyaoeuhyg.public.blob.vercel-storage.com/benycv-8VfJfXQD281tm5sJyZN4mAqbmNd7L4.mp4",
+    },
+
+    // Beny's Personal Website
+    {
+      title: "Beny's Personal Website",
+      href: "https://cv.beny.one",
+      dates: "January 2024",
+      active: true,
+      description: "My personal CV website showcasing resume and projects.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "TailwindCSS",
+        "Shadcn UI",
+        "Magic UI",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://cv.beny.one",
+          icon: <GlobeIcon className="size-3" />,
+        },
+      ],
+      image: "",
+      video:
+        "https://zklyi3yqyaoeuhyg.public.blob.vercel-storage.com/benycv-8VfJfXQD281tm5sJyZN4mAqbmNd7L4.mp4",
+    },
+
+    // G Album Website
+    {
+      title: "G Album",
+      href: "https://galbum.net",
+      dates: "December 2023",
+      active: true,
+      description: "A website to upload and share photos with your friends.",
+      technologies: ["Framer", "Figma", "React", "API"],
+      links: [
+        {
+          type: "Website",
+          href: "https://galbum.net",
+          icon: <GlobeIcon className="size-3" />,
+        },
+      ],
+      image: "",
+      video:
+        "https://zklyi3yqyaoeuhyg.public.blob.vercel-storage.com/benycv-8VfJfXQD281tm5sJyZN4mAqbmNd7L4.mp4",
+    },
+
+    // G Album Gallery Website
+    {
+      title: "G Album Gallery Website",
+      href: "https://photos.galbum.net",
+      dates: "March 2024",
+      active: true,
+      description: "A website to upload and share photos with your friends.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "TailwindCSS",
+        "Shadcn UI",
+        "Firebase",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://photos.galbum.net",
+          icon: <GlobeIcon className="size-3" />,
+        },
+      ],
+      image: "",
+      video:
+        "https://zklyi3yqyaoeuhyg.public.blob.vercel-storage.com/benycv-8VfJfXQD281tm5sJyZN4mAqbmNd7L4.mp4",
+    },
+
+    // RapidResume Website
+    {
+      title: "RapidResume",
+      href: "https://rapidresume.beny.one",
+      dates: "March 2024",
+      active: true,
+      description: "A website to create your resume in minutes.",
+      technologies: ["Next.js", "React", "Redux", "Typescript", "TailwindCSS"],
+      links: [
+        {
+          type: "Website",
+          href: "https://rapidresume.beny.one",
+          icon: <GlobeIcon className="size-3" />,
+        },
         {
           type: "GitHub",
-          href: "https://github.com/BenyD/beny-cv",
+          href: "https://github.com/BenyD/RapidResume",
+          icon: <GitHubIcon className="size-3" />,
+        },
+      ],
+      image: "",
+      video:
+        "https://zklyi3yqyaoeuhyg.public.blob.vercel-storage.com/benycv-8VfJfXQD281tm5sJyZN4mAqbmNd7L4.mp4",
+    },
+
+    // WatcherAI Website
+    {
+      title: "CGPA Calculator",
+      href: "https://watcher.beny.one",
+      dates: "December 2023",
+      active: true,
+      description: "A website to upload and share photos with your friends.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "TailwindCSS",
+        "Tensorflow",
+        "COCO-SSD",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://rapidresume.beny.one",
+          icon: <GlobeIcon className="size-3" />,
+        },
+        {
+          type: "GitHub",
+          href: "https://github.com/BenyD/RapidResume",
+          icon: <GitHubIcon className="size-3" />,
+        },
+      ],
+      image: "",
+      video:
+        "https://zklyi3yqyaoeuhyg.public.blob.vercel-storage.com/benycv-8VfJfXQD281tm5sJyZN4mAqbmNd7L4.mp4",
+    },
+
+    // WatcherAI Website
+    {
+      title: "WatcherAI",
+      href: "https://watcher.beny.one",
+      dates: "December 2023",
+      active: true,
+      description: "A website to upload and share photos with your friends.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "TailwindCSS",
+        "Tensorflow",
+        "COCO-SSD",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://rapidresume.beny.one",
+          icon: <GlobeIcon className="size-3" />,
+        },
+        {
+          type: "GitHub",
+          href: "https://github.com/BenyD/RapidResume",
+          icon: <GitHubIcon className="size-3" />,
+        },
+      ],
+      image: "",
+      video:
+        "https://zklyi3yqyaoeuhyg.public.blob.vercel-storage.com/benycv-8VfJfXQD281tm5sJyZN4mAqbmNd7L4.mp4",
+    },
+
+    // Maxsoft Website
+    {
+      title: "Maxsoft AG",
+      href: "https://rapidresume.beny.one",
+      dates: "March 2024",
+      active: true,
+      description: "A website to create your resume in minutes.",
+      technologies: ["Next.js", "React", "Redux", "Typescript", "TailwindCSS"],
+      links: [
+        {
+          type: "Website",
+          href: "https://rapidresume.beny.one",
+          icon: <GlobeIcon className="size-3" />,
+        },
+        {
+          type: "GitHub",
+          href: "https://github.com/BenyD/RapidResume",
+          icon: <GitHubIcon className="size-3" />,
+        },
+      ],
+      image: "",
+      video:
+        "https://zklyi3yqyaoeuhyg.public.blob.vercel-storage.com/benycv-8VfJfXQD281tm5sJyZN4mAqbmNd7L4.mp4",
+    },
+
+    // FCBoys Website
+    {
+      title: "FC Boys Website",
+      href: "https://rapidresume.beny.one",
+      dates: "March 2024",
+      active: true,
+      description: "A website to create your resume in minutes.",
+      technologies: ["Next.js", "React", "Redux", "Typescript", "TailwindCSS"],
+      links: [
+        {
+          type: "Website",
+          href: "https://rapidresume.beny.one",
+          icon: <GlobeIcon className="size-3" />,
+        },
+        {
+          type: "GitHub",
+          href: "https://github.com/BenyD/RapidResume",
           icon: <GitHubIcon className="size-3" />,
         },
       ],
