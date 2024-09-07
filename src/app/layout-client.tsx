@@ -34,7 +34,7 @@ export default function LayoutClient({
     }, splashDuration);
 
     return () => clearTimeout(timer);
-  }, [splashDuration]);
+  }, [splashDuration, isLoading]); // Include isLoading in the dependency array
 
   return (
     <ThemeProvider

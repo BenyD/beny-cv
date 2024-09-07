@@ -114,6 +114,14 @@ export function Navbar() {
                         buttonVariants({ variant: "ghost", size: "icon" }),
                         "flex h-10 w-10 items-center justify-center rounded-full",
                       )}
+                      target={
+                        item.href.startsWith("http") ? "_blank" : undefined
+                      }
+                      rel={
+                        item.href.startsWith("http")
+                          ? "noopener noreferrer"
+                          : undefined
+                      }
                     >
                       <item.icon className="h-5 w-5" />
                     </Link>
