@@ -79,16 +79,6 @@
   page-break-before: always;
 }
 
-.cmdk-item {
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease; /* Adjust transition */
-}
-
-.cmdk-item:hover {
-  backdrop-filter: none; /* Remove any blur effect on hover */
-}
-
 .fixed-bottom {
   position: fixed;
   bottom: 0;
