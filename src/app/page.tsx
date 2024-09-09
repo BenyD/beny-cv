@@ -47,19 +47,21 @@ export default function Page() {
     <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 pt-8 md:p-16">
       <section className="mx-auto w-full max-w-2xl space-y-8 bg-white dark:bg-neutral-900">
         <div className="flex flex-col items-center justify-between md:flex-row">
-          <BlurFade delay={BLUR_FADE_DELAY * 6}>
-            <Avatar className="mb-6 size-36 md:mb-0 md:size-28">
-              <Image
-                alt={RESUME_DATA.name}
-                src="/avatar.jpg"
-                width={144}
-                height={144}
-                className="rounded-full"
-              />
-              <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
-            </Avatar>
-          </BlurFade>
-          <div className="flex-1 space-y-1.5 text-center md:text-left">
+          <div className="flex-1 space-y-1.5 w-full text-center md:text-left">
+            <div className="md:hidden mb-6 flex justify-center"> {/* Center avatar for mobile */}
+              <BlurFade delay={BLUR_FADE_DELAY * 6}>
+                <Avatar className="size-36">
+                  <Image
+                    alt={RESUME_DATA.name}
+                    src="/avatar.jpg"
+                    width={144}
+                    height={144}
+                    className="rounded-full"
+                  />
+                  <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
+                </Avatar>
+              </BlurFade>
+            </div>
             <BlurFadeText
               delay={BLUR_FADE_DELAY}
               className="text-2xl font-bold w-full text-center md:text-left dark:text-white"
@@ -67,12 +69,12 @@ export default function Page() {
               text={RESUME_DATA.name}
             />
             <BlurFadeText
-              className="max-w-md mx-auto md:mx-0 text-pretty font-mono text-sm text-muted-foreground dark:text-neutral-400"
+              className="max-w-md mx-auto text-pretty font-mono text-sm text-muted-foreground dark:text-neutral-400"
               delay={BLUR_FADE_DELAY * 2}
               text={RESUME_DATA.about}
             />
             <BlurFade delay={BLUR_FADE_DELAY * 3}>
-              <p className="max-w-md mx-auto md:mx-0 items-center text-pretty font-mono text-xs text-muted-foreground dark:text-neutral-400">
+              <p className="max-w-md mx-auto text-center md:text-left items-center text-pretty font-mono text-xs text-muted-foreground dark:text-neutral-400">
                 <a
                   className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
                   href={RESUME_DATA.locationLink}
@@ -139,6 +141,17 @@ export default function Page() {
               </div>
             </BlurFade>
           </div>
+          <BlurFade delay={BLUR_FADE_DELAY * 6} className="hidden md:block">
+            <Avatar className="size-28">
+              <Image
+                alt={RESUME_DATA.name}
+                src="/avatar.jpg"
+                width={112}
+                height={112}
+              />
+              <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
+            </Avatar>
+          </BlurFade>
         </div>
         <Section>
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
