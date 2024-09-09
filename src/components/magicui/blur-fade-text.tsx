@@ -35,7 +35,7 @@ const BlurFadeText = ({
 
   if (animateByCharacter) {
     return (
-      <div className="flex">
+      <div className={cn("flex", className)}>
         <AnimatePresence>
           {characters.map((char, i) => (
             <motion.span
@@ -49,7 +49,7 @@ const BlurFadeText = ({
                 delay: delay + i * characterDelay,
                 ease: "easeOut",
               }}
-              className={cn("inline-block", className)}
+              className="inline-block"
               style={{ width: char.trim() === "" ? "0.2em" : "auto" }}
             >
               {char}
@@ -61,7 +61,7 @@ const BlurFadeText = ({
   }
 
   return (
-    <div className="flex">
+    <div className={cn("flex", className)}>
       <AnimatePresence>
         <motion.span
           initial="hidden"
@@ -73,7 +73,7 @@ const BlurFadeText = ({
             delay,
             ease: "easeOut",
           }}
-          className={cn("inline-block", className)}
+          className="inline-block w-full"
         >
           {text}
         </motion.span>
