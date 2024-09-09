@@ -2,7 +2,12 @@
 
 import Image from "next/image";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Section } from "@/components/ui/section";
 import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
@@ -47,8 +52,10 @@ export default function Page() {
     <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 pt-8 md:p-16">
       <section className="mx-auto w-full max-w-2xl space-y-8 bg-white dark:bg-neutral-900">
         <div className="flex flex-col items-center justify-between md:flex-row">
-          <div className="flex-1 space-y-1.5 w-full text-center md:text-left">
-            <div className="md:hidden mb-6 flex justify-center"> {/* Center avatar for mobile */}
+          <div className="w-full flex-1 space-y-1.5 text-center md:text-left">
+            <div className="mb-6 flex justify-center md:hidden">
+              {" "}
+              {/* Center avatar for mobile */}
               <BlurFade delay={BLUR_FADE_DELAY * 6}>
                 <Avatar className="size-36">
                   <Image
@@ -64,17 +71,17 @@ export default function Page() {
             </div>
             <BlurFadeText
               delay={BLUR_FADE_DELAY}
-              className="text-2xl font-bold w-full text-center md:text-left dark:text-white"
+              className="w-full text-center text-2xl font-bold md:text-left dark:text-white"
               yOffset={8}
               text={RESUME_DATA.name}
             />
             <BlurFadeText
-              className="max-w-md mx-auto text-pretty font-mono text-sm text-muted-foreground dark:text-neutral-400"
+              className="mx-auto max-w-md text-pretty font-mono text-sm text-muted-foreground md:mx-0 dark:text-neutral-400"
               delay={BLUR_FADE_DELAY * 2}
               text={RESUME_DATA.about}
             />
             <BlurFade delay={BLUR_FADE_DELAY * 3}>
-              <p className="max-w-md mx-auto text-center md:text-left items-center text-pretty font-mono text-xs text-muted-foreground dark:text-neutral-400">
+              <p className="mx-auto text-pretty font-mono text-xs text-muted-foreground md:mx-0 dark:text-neutral-400">
                 <a
                   className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
                   href={RESUME_DATA.locationLink}
@@ -88,7 +95,7 @@ export default function Page() {
               </p>
             </BlurFade>
             <BlurFade delay={BLUR_FADE_DELAY * 4}>
-              <div className="flex justify-center gap-x-1 pt-1 font-mono text-sm text-muted-foreground dark:text-neutral-400 md:justify-start">
+              <div className="flex justify-center gap-x-1 pt-1 font-mono text-sm text-muted-foreground md:justify-start dark:text-neutral-400">
                 {RESUME_DATA.contact.email && (
                   <Button
                     className="size-8 dark:border-neutral-700 dark:bg-neutral-900 hover:dark:bg-neutral-700"
@@ -214,19 +221,19 @@ export default function Page() {
                       <a className="hover:underline" href={work.link}>
                         {work.company}
                       </a>
-                      <span className="inline-flex gap-x-1">
+                      <span className="inline-flex gap-x-1 px-1">
                         {work.badges.map((badge) => (
                           <Badge
                             className="align-middle text-xs dark:bg-neutral-700 dark:text-neutral-300"
                             key={badge}
-                            variant="secondary"
+                            variant="outline"
                           >
                             {badge}
                           </Badge>
                         ))}
                       </span>
                     </h3>
-                    <div className="text-sm tabular-nums text-gray-500 dark:text-neutral-400">
+                    <div className="hidden text-sm tabular-nums text-gray-500 md:block dark:text-neutral-400">
                       {work.start} - {work.end ?? "Present"}
                     </div>
                   </div>
@@ -237,6 +244,11 @@ export default function Page() {
                 <CardContent className="mt-2 text-xs dark:text-neutral-400">
                   {work.description}
                 </CardContent>
+                <CardFooter className="mt-2 md:hidden">
+                  <Badge variant="secondary" className="text-xs">
+                    {work.start} - {work.end ?? "Present"}
+                  </Badge>
+                </CardFooter>
               </Card>
             </BlurFade>
           ))}
@@ -259,7 +271,7 @@ export default function Page() {
                     <h3 className="font-semibold leading-none">
                       {education.school}
                     </h3>
-                    <div className="text-sm tabular-nums text-gray-500 dark:text-neutral-400">
+                    <div className="hidden text-sm tabular-nums text-gray-500 md:block dark:text-neutral-400">
                       {education.start} - {education.end}
                     </div>
                   </div>
@@ -267,6 +279,11 @@ export default function Page() {
                 <CardContent className="mt-2 dark:text-neutral-400">
                   {education.degree}
                 </CardContent>
+                <CardFooter className="mt-2 md:hidden">
+                  <Badge variant="secondary" className="text-xs">
+                    {education.start} - {education.end}
+                  </Badge>
+                </CardFooter>
               </Card>
             </BlurFade>
           ))}
@@ -306,7 +323,7 @@ export default function Page() {
                           {certification.name}
                         </a>
                       </h3>
-                      <div className="text-sm tabular-nums text-gray-500 dark:text-neutral-400">
+                      <div className="hidden text-sm tabular-nums text-gray-500 md:block dark:text-neutral-400">
                         {certification.issueDate}{" "}
                         {certification.expirationDate
                           ? `- ${certification.expirationDate}`
@@ -320,6 +337,14 @@ export default function Page() {
                   <CardContent className="mt-2 dark:text-neutral-400">
                     Certificate ID: {certification.certificateId}
                   </CardContent>
+                  <CardFooter className="mt-2 md:hidden">
+                    <Badge variant="secondary" className="text-xs">
+                      {certification.issueDate}{" "}
+                      {certification.expirationDate
+                        ? `- ${certification.expirationDate}`
+                        : ""}
+                    </Badge>
+                  </CardFooter>
                 </Card>
               </BlurFade>
             ))}
