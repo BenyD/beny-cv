@@ -207,7 +207,7 @@ export const RESUME_DATA = {
         },
       ],
       image: "",
-      video: "Galbum.mp4",
+      video: "GAlbum.mp4",
     },
 
     // G Album Gallery Website
@@ -258,7 +258,7 @@ export const RESUME_DATA = {
         },
       ],
       image: "",
-      video: "rapidResume.mp4",
+      video: "RapidResume.mp4",
     },
 
     // CGPA Calculator Website
