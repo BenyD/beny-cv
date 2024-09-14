@@ -64,7 +64,9 @@ export function ProjectCard({
         )}
         {!image && video && (
           <video
-            src={video}
+            // Update the src to use the local video file
+            // src={video}
+            src={`/videos/${video}`}
             autoPlay
             loop
             muted

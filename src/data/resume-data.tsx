@@ -159,8 +159,7 @@ export const RESUME_DATA = {
         },
       ],
       image: "",
-      video:
-        "https://zklyi3yqyaoeuhyg.public.blob.vercel-storage.com/BenyCV-ZLyF0PHXy5PGbl8XVuLvUvsAwqmz1J.mp4",
+      video: "BenyCV.mp4",
     },
 
     // Beny's Personal Website
@@ -188,8 +187,7 @@ export const RESUME_DATA = {
         },
       ],
       image: "",
-      video:
-        "https://zklyi3yqyaoeuhyg.public.blob.vercel-storage.com/BenyPortfolio-XSpPo1kPzSTswdoTTbrAtiBDn6OsL8.mp4",
+      video: "BenyPortfolio.mp4",
     },
 
     // G Album Website
@@ -209,8 +207,7 @@ export const RESUME_DATA = {
         },
       ],
       image: "",
-      video:
-        "https://zklyi3yqyaoeuhyg.public.blob.vercel-storage.com/Galbum-oq1Ur9wMa3h2Rdrw5nfJ1UED3h7t3x.mp4",
+      video: "Galbum.mp4",
     },
 
     // G Album Gallery Website
@@ -236,8 +233,7 @@ export const RESUME_DATA = {
         },
       ],
       image: "",
-      video:
-        "https://zklyi3yqyaoeuhyg.public.blob.vercel-storage.com/Galbum-Gallery-Ypsbr94zUsk37KL9QJm10OsmzgyC3O.mp4",
+      video: "GAlbumGallery.mp4",
     },
 
     // RapidResume Website
@@ -262,8 +258,7 @@ export const RESUME_DATA = {
         },
       ],
       image: "",
-      video:
-        "https://zklyi3yqyaoeuhyg.public.blob.vercel-storage.com/rapidResume-kKWY2mbUhqoVYJTchARL8NL4lA9gsG.mp4",
+      video: "rapidResume.mp4",
     },
 
     // CGPA Calculator Website
@@ -288,41 +283,8 @@ export const RESUME_DATA = {
         },
       ],
       image: "",
-      video:
-        "https://zklyi3yqyaoeuhyg.public.blob.vercel-storage.com/cgpa-TqjHM5wm5aijm6bAOiT62lg0ynrTcp.mp4",
+      video: "CGPACalculator.mp4",
     },
-
-    // // WatcherAI Website
-    // {
-    //   title: "WatcherAI",
-    //   href: "https://watcher.beny.one",
-    //   dates: "December 2023",
-    //   active: true,
-    //   description:
-    //     "A web app demonstrating object detection technology for enhancing surveillance systems. It offers a unique approach to improving traditional security cameras.",
-    //   technologies: [
-    //     "Next.js",
-    //     "Typescript",
-    //     "TailwindCSS",
-    //     "Tensorflow",
-    //     "COCO-SSD",
-    //   ],
-    //   links: [
-    //     {
-    //       type: "Website",
-    //       href: "https://rapidresume.beny.one",
-    //       icon: <GlobeIcon className="size-3" />,
-    //     },
-    //     {
-    //       type: "GitHub",
-    //       href: "https://github.com/BenyD/RapidResume",
-    //       icon: <GitHubIcon className="size-3" />,
-    //     },
-    //   ],
-    //   image: "",
-    //   video:
-    //     "https://zklyi3yqyaoeuhyg.public.blob.vercel-storage.com/benycv-8VfJfXQD281tm5sJyZN4mAqbmNd7L4.mp4",
-    // },
 
     // Maxsoft Website
     {
@@ -341,34 +303,7 @@ export const RESUME_DATA = {
         },
       ],
       image: "",
-      video:
-        "https://zklyi3yqyaoeuhyg.public.blob.vercel-storage.com/Maxsoft-1HGgnzOFD0jJTCLTWmPrNOmhPJqdeL.mp4",
+      video: "Maxsoft.mp4",
     },
-
-    // // Advisory AG Website
-    // {
-    //   title: "Advisory AG",
-    //   href: "https://rapidresume.beny.one",
-    //   dates: "March 2024",
-    //   active: true,
-    //   description:
-    //     "An informative website for an insurance firm, highlighting their services and unique approaches. Focuses on trust and transparency to engage potential clients.",
-    //   technologies: ["Framer", "Figma", "Spline", "React", "API"],
-    //   links: [
-    //     {
-    //       type: "Website",
-    //       href: "https://rapidresume.beny.one",
-    //       icon: <GlobeIcon className="size-3" />,
-    //     },
-    //     {
-    //       type: "GitHub",
-    //       href: "https://github.com/BenyD/RapidResume",
-    //       icon: <GitHubIcon className="size-3" />,
-    //     },
-    //   ],
-    //   image: "",
-    //   video:
-    //     "https://zklyi3yqyaoeuhyg.public.blob.vercel-storage.com/benycv-8VfJfXQD281tm5sJyZN4mAqbmNd7L4.mp4",
-    // },
   ],
 } as const;
