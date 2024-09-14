@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import { useState, useEffect, useRef } from "react";
 
 interface Props {
   title: string;
@@ -40,6 +41,37 @@ export function ProjectCard({
   links,
   className,
 }: Props) {
+  const [isInView, setIsInView] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    const currentVideo = videoRef.current;
+    if (currentVideo) {
+      observer.observe(currentVideo);
+    }
+
+    return () => {
+      if (currentVideo) {
+        observer.unobserve(currentVideo);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isInView && videoRef.current) {
+      videoRef.current.play();
+    } else if (!isInView && videoRef.current) {
+      videoRef.current.pause();
+    }
+  }, [isInView]);
+
   return (
     <Card
       className={cn(
@@ -60,19 +92,21 @@ export function ProjectCard({
             width={500}
             height={300}
             className="h-40 w-full overflow-hidden object-cover object-top"
+            loading="lazy"
           />
         )}
         {!image && video && (
           <video
-            // Update the src to use the local video file
-            // src={video}
-            src={`/videos/${video}`}
-            autoPlay
+            ref={videoRef}
             loop
             muted
             playsInline
             className="pointer-events-none mx-auto h-40 w-full object-cover object-top"
-          />
+            preload="metadata"
+          >
+            <source src={`/videos/${video}`} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         )}
       </Link>
       <CardHeader className="px-2">
