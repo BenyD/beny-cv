@@ -286,6 +286,39 @@ export const RESUME_DATA = {
       video: "CGPACalculator.mp4",
     },
 
+    // HITS AI Assistant
+    {
+      title: "HITS AI Assistant",
+      href: "https://hitsgpt.beny.one/",
+      dates: "December 2024",
+      active: true,
+      description:
+        "An AI assistant for the HITS website to help students with their queries and provide them with the information they need.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "TailwindCSS",
+        "Shadcn UI",
+        "Supabase",
+        "Hugging Face",
+        "PineconeDB",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://hitsgpt.beny.one/",
+          icon: <GlobeIcon className="size-3" />,
+        },
+        {
+          type: "GitHub",
+          href: "https://github.com/BenyD/hitsgpt",
+          icon: <GitHubIcon className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "HITSGPT.mp4",
+    },
+
     // Maxsoft Website
     {
       title: "Maxsoft AG",
