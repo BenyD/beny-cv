@@ -55,6 +55,22 @@ export const RESUME_DATA = {
   ],
   certification: [
     {
+      name: "Epic Games Game Design",
+      providerName: "Epic Games",
+      link: "https://www.coursera.org/account/accomplishments/professional-cert/YFRK32383Q37",
+      issueDate: "Jan 2025",
+      expirationDate: "",
+      certificateId: "YFRK32383Q37",
+    },
+    {
+      name: "GitHub Foundations",
+      providerName: "GitHub",
+      link: "https://www.credly.com/badges/30b21a01-362d-4d5d-90ff-3cdbcd3d8bf3/linked_in_profile",
+      issueDate: "Dec 2024",
+      expirationDate: "Dec 2027",
+      certificateId: "",
+    },
+    {
       name: "Microsoft Certified: Security, Compliance, and Identity Fundamentals",
       providerName: "Microsoft",
       link: "https://learn.microsoft.com/en-gb/users/benyd/credentials/e0e79b7cc9d3a4b1",
