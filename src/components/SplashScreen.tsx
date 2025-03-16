@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
 
-// Selected 5 languages including Tamil, Hindi and English
+// Selected languages in order: English, French, Japanese, Korean
 const greetings = [
   { text: "Hello", lang: "English" },
-  { text: "வணக்கம்", lang: "Tamil" },
-  { text: "नमस्ते", lang: "Hindi" },
   { text: "Bonjour", lang: "French" },
   { text: "こんにちは", lang: "Japanese" },
+  { text: "안녕하세요", lang: "Korean" },
 ];
 
 const SplashScreen = ({
@@ -116,6 +115,9 @@ const SplashScreen = ({
                     <motion.span
                       key={`${char}-${index}`}
                       className={`inline-block ${textColor} text-7xl font-light tracking-tight`}
+                      style={{
+                        fontFamily: "var(--font-sans), system-ui, sans-serif",
+                      }}
                       initial={{
                         y: 50,
                         opacity: 0,
