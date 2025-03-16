@@ -9,7 +9,7 @@ export const RESUME_DATA = {
   about:
     "Software Engineer and Full Stack Developer. Passionate about innovation and learning. Actively building solutions that enhance lives worldwide.",
   summary:
-    "In 2024, I continued my journey as a software engineer, focusing on innovative full-stack development. I specialize in building and scaling impactful solutions, leveraging my diverse skill set. I've completed [multiple certifications from Microsoft, Google, and Meta](#certifications) and contributed to [various small-scale projects](https://github.com/BenyD). I love creating new things and constantly strive to learn. My work is driven by the goal of enhancing lives through technology. Complete information can be found in my [personal website](https://www.beny.one/).",
+    "In 2025, I continued my journey as a software engineer, focusing on innovative full-stack development. I specialize in building and scaling impactful solutions, leveraging my diverse skill set. I've completed [multiple certifications from Microsoft, Google, and Meta](#certifications) and contributed to [various small-scale projects](https://github.com/BenyD). I love creating new things and constantly strive to learn. My work is driven by the goal of enhancing lives through technology. Complete information can be found in my [personal website](https://www.beny.one/).",
   personalWebsiteUrl: "https://www.beny.one",
   contact: {
     email: "benydishon@gmail.com",
@@ -54,6 +54,22 @@ export const RESUME_DATA = {
     },
   ],
   certification: [
+    {
+      name: "The Fundamentals of RDMA Programming",
+      providerName: "NVIDIA",
+      link: "https://www.coursera.org/account/accomplishments/verify/LUUQZDGAVSU9",
+      issueDate: "Feb 2025",
+      expirationDate: "",
+      certificateId: "LUUQZDGAVSU9",
+    },
+    {
+      name: "Introduction to Networking",
+      providerName: "NVIDIA",
+      link: "https://www.coursera.org/account/accomplishments/verify/O418JQIHXL0H",
+      issueDate: "Jan 2025",
+      expirationDate: "",
+      certificateId: "O418JQIHXL0H",
+    },
     {
       name: "Epic Games Game Design",
       providerName: "Epic Games",
@@ -150,6 +166,14 @@ export const RESUME_DATA = {
     "AWS",
     "Azure",
     "Cybersecurity",
+  ],
+  achievements: [
+    {
+      title: "President - Blue Screen Programming Club (CSE)",
+      date: "2025",
+      description:
+        "Honored with the position of President for the Blue Screen Programming Club & Computer Science and Engineering department, awarded for exceptional academic excellence.",
+    },
   ],
   projects: [
     // Beny's CV Website
@@ -300,39 +324,6 @@ export const RESUME_DATA = {
       ],
       image: "",
       video: "CGPACalculator.mp4",
-    },
-
-    // HITS AI Assistant
-    {
-      title: "HITS AI Assistant",
-      href: "https://hitsgpt.beny.one/",
-      dates: "December 2024",
-      active: true,
-      description:
-        "An AI assistant for the HITS website to help students with their queries and provide them with the information they need.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Supabase",
-        "Hugging Face",
-        "PineconeDB",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://hitsgpt.beny.one/",
-          icon: <GlobeIcon className="size-3" />,
-        },
-        {
-          type: "GitHub",
-          href: "https://github.com/BenyD/hitsgpt",
-          icon: <GitHubIcon className="size-3" />,
-        },
-      ],
-      image: "",
-      video: "HITSGPT.mp4",
     },
 
     // Maxsoft Website

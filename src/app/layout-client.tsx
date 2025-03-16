@@ -24,11 +24,11 @@ export default function LayoutClient({
   children: React.ReactNode;
 }) {
   const [isLoading, setIsLoading] = useState(true);
-  const [splashDuration] = useState(6000); // Set fixed duration to 6 seconds
+  const [splashDuration] = useState(8000); // Set fixed duration to 8 seconds for all languages and animations
 
   useEffect(() => {
     console.log("Splash screen should be visible:", isLoading);
-    // Ensure the splash screen shows for exactly 6 seconds
+    // Ensure the splash screen shows for exactly 8 seconds
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, splashDuration);

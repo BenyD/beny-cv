@@ -384,8 +384,43 @@ export default function Page() {
             ))}
           </div>
         </Section>
-        <Section className="scroll-mb-16">
+        <Section>
           <BlurFade delay={BLUR_FADE_DELAY * 19}>
+            <h2 className="text-xl font-bold dark:text-white">Achievements</h2>
+          </BlurFade>
+          {RESUME_DATA.achievements.map((achievement, id) => (
+            <BlurFade
+              key={achievement.title}
+              delay={BLUR_FADE_DELAY * 20 + id * 0.05}
+            >
+              <Card
+                key={achievement.title}
+                className="dark:bg-neutral-900 dark:text-neutral-400"
+              >
+                <CardHeader>
+                  <div className="flex items-center justify-between gap-x-2 text-base dark:text-white">
+                    <h3 className="font-semibold leading-none">
+                      {achievement.title}
+                    </h3>
+                    <div className="hidden text-sm tabular-nums text-gray-500 md:block dark:text-neutral-400">
+                      {achievement.date}
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent className="mt-2 text-xs dark:text-neutral-400">
+                  {achievement.description}
+                </CardContent>
+                <CardFooter className="mt-2 md:hidden">
+                  <Badge variant="secondary" className="text-xs">
+                    {achievement.date}
+                  </Badge>
+                </CardFooter>
+              </Card>
+            </BlurFade>
+          ))}
+        </Section>
+        <Section className="scroll-mb-16">
+          <BlurFade delay={BLUR_FADE_DELAY * 21}>
             <h2 className="text-xl font-bold dark:text-white">Projects</h2>
           </BlurFade>
           <div className="mx-auto grid max-w-[800px] grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-2">
@@ -393,7 +428,7 @@ export default function Page() {
               RESUME_DATA.projects.map((project, id) => (
                 <BlurFade
                   key={project.title}
-                  delay={BLUR_FADE_DELAY * 20 + id * 0.05}
+                  delay={BLUR_FADE_DELAY * 22 + id * 0.05}
                 >
                   <ProjectCard
                     key={project.title}
