@@ -13,22 +13,58 @@ import { Section } from "@/components/ui/section";
 import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import ReactMarkdown from "react-markdown";
 import { Link, Element, animateScroll as scroll } from "react-scroll";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ProjectCard } from "@/components/project-card";
+import { Pointer } from "@/components/magicui/pointer";
+import { motion } from "motion/react";
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
   const [isClient, setIsClient] = useState(false);
   const [currentTime, setCurrentTime] = useState("");
+  const lastUpdated = "March 2025";
+  const [isHoveringLink, setIsHoveringLink] = useState(false);
+
+  // Create a ref to track the main container
+  const mainRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+  // Add effect to detect when hovering over links
+  useEffect(() => {
+    const mainElement = mainRef.current;
+    if (!mainElement) return;
+
+    const handleMouseOver = (e: MouseEvent) => {
+      // Check if hovering over a link or button
+      const target = e.target as HTMLElement;
+      const isLink =
+        target.tagName === "A" ||
+        target.tagName === "BUTTON" ||
+        target.closest("a") ||
+        target.closest("button");
+      setIsHoveringLink(!!isLink);
+    };
+
+    const handleMouseOut = () => {
+      setIsHoveringLink(false);
+    };
+
+    mainElement.addEventListener("mouseover", handleMouseOver);
+    mainElement.addEventListener("mouseout", handleMouseOut);
+
+    return () => {
+      mainElement.removeEventListener("mouseover", handleMouseOver);
+      mainElement.removeEventListener("mouseout", handleMouseOut);
+    };
+  }, [isClient]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -49,8 +85,42 @@ export default function Page() {
   }, []);
 
   return (
-    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 pt-8 md:p-16">
+    <main
+      ref={mainRef}
+      className="container relative mx-auto scroll-my-12 overflow-auto p-4 pt-8 md:p-16"
+    >
       <section className="mx-auto w-full max-w-2xl space-y-8 bg-white dark:bg-neutral-900">
+        <Pointer>
+          <motion.div
+            animate={
+              isHoveringLink
+                ? {
+                    scale: 1.2,
+                    transition: { duration: 0.2 },
+                  }
+                : {
+                    scale: 1,
+                    transition: { duration: 0.2 },
+                  }
+            }
+            className="relative"
+          >
+            <motion.div
+              className={`h-6 w-6 rounded-full border ${
+                isHoveringLink
+                  ? "border-white/50 bg-gray-500/40"
+                  : "border-white/30 bg-gray-500/30"
+              } backdrop-blur-sm dark:border-white/30 dark:bg-gray-600/30`}
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{
+                type: "spring",
+                stiffness: 260,
+                damping: 20,
+              }}
+            />
+          </motion.div>
+        </Pointer>
         <div className="flex flex-col items-center justify-between md:flex-row">
           <div className="w-full flex-1 space-y-1.5 text-center md:text-left">
             <div className="mb-6 flex justify-center md:hidden">
@@ -447,6 +517,7 @@ export default function Page() {
         </Section>
       </section>
       <footer className="mt-8 text-center text-sm text-gray-500 dark:text-gray-400">
+        <div className="mb-2">Last Updated on {lastUpdated}</div>
         <div className="mb-2">{currentTime}</div>© {new Date().getFullYear()}{" "}
         {RESUME_DATA.name}. All rights reserved.
       </footer>
