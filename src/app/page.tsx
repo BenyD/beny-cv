@@ -20,9 +20,20 @@ import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ProjectCard } from "@/components/project-card";
 import { Pointer } from "@/components/magicui/pointer";
-import { motion } from "motion/react";
+import { motion, useMotionValue } from "motion/react";
+import { FadeText } from "@/components/magicui/fade-text";
+import { useCursor } from "@/components/CursorContext";
 
 const BLUR_FADE_DELAY = 0.04;
+
+// Client-side wrapper for the Pointer component
+function CustomPointer({ children }: { children: React.ReactNode }) {
+  const { showCustomCursor } = useCursor();
+
+  if (!showCustomCursor) return null;
+
+  return <Pointer>{children}</Pointer>;
+}
 
 export default function Page() {
   const [isClient, setIsClient] = useState(false);
@@ -90,7 +101,7 @@ export default function Page() {
       className="container relative mx-auto scroll-my-12 overflow-auto p-4 pt-8 md:p-16"
     >
       <section className="mx-auto w-full max-w-2xl space-y-8 bg-white dark:bg-neutral-900">
-        <Pointer>
+        <CustomPointer>
           <motion.div
             animate={
               isHoveringLink
@@ -120,7 +131,7 @@ export default function Page() {
               }}
             />
           </motion.div>
-        </Pointer>
+        </CustomPointer>
         <div className="flex flex-col items-center justify-between md:flex-row">
           <div className="w-full flex-1 space-y-1.5 text-center md:text-left">
             <div className="mb-6 flex justify-center md:hidden">
@@ -516,10 +527,37 @@ export default function Page() {
           </div>
         </Section>
       </section>
-      <footer className="mt-8 text-center text-sm text-gray-500 dark:text-gray-400">
-        <div className="mb-2">Last Updated on {lastUpdated}</div>
-        <div className="mb-2">{currentTime}</div>© {new Date().getFullYear()}{" "}
-        {RESUME_DATA.name}. All rights reserved.
+      <footer className="mt-8 dark:border-neutral-800">
+        <div className="mx-auto w-full max-w-2xl">
+          {/* Top row - Last updated (left) and Time/Menu (right) */}
+          <div className="flex flex-col justify-between gap-4 border-t border-gray-100 pt-4 md:flex-row dark:border-neutral-800">
+            {/* Left - Last updated */}
+            <div className="text-center text-sm text-gray-500 md:text-left dark:text-gray-400">
+              <div>Last Updated</div>
+              <div className="text-xs">{lastUpdated}</div>
+            </div>
+
+            {/* Right - Current time and keyboard shortcut */}
+            <div className="flex flex-col items-center text-sm text-gray-500 md:items-end dark:text-gray-400">
+              <div>{currentTime}</div>
+              <div className="mt-1 hidden items-center md:flex">
+                <span className="text-xs">Press</span>
+                <kbd className="mx-1 inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-70 hover:opacity-100 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">
+                  <span className="text-xs">
+                    {navigator.userAgent.indexOf("Mac") !== -1 ? "⌘" : "Ctrl"}+K
+                  </span>
+                </kbd>
+                <span className="text-xs">for commands</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom row - Copyright */}
+          <div className="mt-4 border-t border-gray-100 pt-4 text-center text-xs text-gray-500 dark:border-neutral-800 dark:text-gray-400">
+            © {new Date().getFullYear()} {RESUME_DATA.name}. All rights
+            reserved.
+          </div>
+        </div>
       </footer>
     </main>
   );

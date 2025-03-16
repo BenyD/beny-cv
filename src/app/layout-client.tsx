@@ -6,6 +6,8 @@ import React, { useState, useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import dynamic from "next/dynamic";
 import SplashScreen from "@/components/SplashScreen";
+import { CommandMenu } from "@/components/CommandMenu";
+import { CursorProvider } from "@/components/CursorContext";
 
 const DynamicContent = dynamic(
   () =>
@@ -13,6 +15,7 @@ const DynamicContent = dynamic(
       <>
         <div className="pb-10">{children}</div>
         <Navbar />
+        <CommandMenu />
       </>
     )),
   { ssr: false },
@@ -43,16 +46,18 @@ export default function LayoutClient({
       enableSystem
       disableTransitionOnChange
     >
-      <TooltipProvider delayDuration={0}>
-        {isLoading ? (
-          <SplashScreen
-            onFinish={() => setIsLoading(false)}
-            duration={splashDuration}
-          />
-        ) : (
-          <DynamicContent>{children}</DynamicContent>
-        )}
-      </TooltipProvider>
+      <CursorProvider>
+        <TooltipProvider delayDuration={0}>
+          {isLoading ? (
+            <SplashScreen
+              onFinish={() => setIsLoading(false)}
+              duration={splashDuration}
+            />
+          ) : (
+            <DynamicContent>{children}</DynamicContent>
+          )}
+        </TooltipProvider>
+      </CursorProvider>
     </ThemeProvider>
   );
 }
