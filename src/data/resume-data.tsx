@@ -250,30 +250,24 @@ export const RESUME_DATA = {
       video: "GAlbum.mp4",
     },
 
-    // G Album Gallery Website
+    // Maxsoft Website
     {
-      title: "G Album Gallery Website",
-      href: "https://photos.galbum.net",
-      dates: "April 2024",
+      title: "Maxsoft AG",
+      href: "https://www.maxsoft.ch/",
+      dates: "December 2023",
       active: true,
       description:
-        "A comprehensive gallery website hosting thousands of sample photos for client showcase. Includes an admin dashboard for managing the gallery content smoothly and efficiently.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Firebase",
-      ],
+        "A corporate website for a Swiss IT company, showcasing their services and expertise. Provides an interactive and professional experience for potential clients.",
+      technologies: ["Framer", "Figma", "Spline", "React", "API"],
       links: [
         {
           type: "Website",
-          href: "https://photos.galbum.net",
+          href: "https://www.maxsoft.ch/",
           icon: <GlobeIcon className="size-3" />,
         },
       ],
       image: "",
-      video: "GAlbumGallery.mp4",
+      video: "Maxsoft.mp4",
     },
 
     // RapidResume Website
@@ -324,26 +318,6 @@ export const RESUME_DATA = {
       ],
       image: "",
       video: "CGPACalculator.mp4",
-    },
-
-    // Maxsoft Website
-    {
-      title: "Maxsoft AG",
-      href: "https://www.maxsoft.ch/",
-      dates: "December 2023",
-      active: true,
-      description:
-        "A corporate website for a Swiss IT company, showcasing their services and expertise. Provides an interactive and professional experience for potential clients.",
-      technologies: ["Framer", "Figma", "Spline", "React", "API"],
-      links: [
-        {
-          type: "Website",
-          href: "https://www.maxsoft.ch/",
-          icon: <GlobeIcon className="size-3" />,
-        },
-      ],
-      image: "",
-      video: "Maxsoft.mp4",
     },
   ],
 } as const;
