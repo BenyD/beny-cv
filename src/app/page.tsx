@@ -553,7 +553,7 @@ export default function Page() {
           </div>
 
           {/* Bottom row - Copyright */}
-          <div className="mt-4 border-t border-gray-100 pt-4 text-center text-xs text-gray-500 dark:border-neutral-800 dark:text-gray-400">
+          <div className="mt-4 border-t border-gray-100 pb-20 pt-4 text-center text-xs text-gray-500 dark:border-neutral-800 dark:text-gray-400">
             © {new Date().getFullYear()} {RESUME_DATA.name}. All rights
             reserved.
           </div>
