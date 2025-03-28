@@ -93,9 +93,12 @@ const SplashScreen = ({
           <motion.div
             className="relative flex flex-col items-center justify-center"
             animate={
-              isExiting ? { scale: 1.2, opacity: 0 } : { scale: 1, opacity: 1 }
+              isExiting ? { scale: 1.1, opacity: 0 } : { scale: 1, opacity: 1 }
             }
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: 0.8,
+              ease: [0.22, 1, 0.36, 1],
+            }}
           >
             <AnimatePresence mode="wait">
               <motion.div
@@ -109,48 +112,66 @@ const SplashScreen = ({
                   ease: [0.22, 1, 0.36, 1],
                 }}
               >
-                {/* Main greeting text with Apple-style animation */}
-                <div className="overflow-hidden">
-                  {currentGreeting.text.split("").map((char, index) => (
-                    <motion.span
-                      key={`${char}-${index}`}
-                      className={`inline-block ${textColor} text-7xl font-light tracking-tight`}
-                      style={{
-                        fontFamily: "var(--font-sans), system-ui, sans-serif",
-                      }}
-                      initial={{
-                        y: 50,
-                        opacity: 0,
-                        filter: "blur(4px)",
-                      }}
-                      animate={{
-                        y: 0,
-                        opacity: 1,
-                        filter: "blur(0px)",
-                      }}
-                      transition={{
-                        duration: 0.5,
-                        ease: [0.22, 1, 0.36, 1],
-                        delay: index * 0.03,
-                      }}
-                    >
-                      {char === " " ? "\u00A0" : char}
-                    </motion.span>
-                  ))}
-                </div>
+                <div className="flex flex-col items-center overflow-visible">
+                  {/* Main greeting with handwriting animation */}
+                  <div className="flex overflow-visible">
+                    {currentGreeting.text.split("").map((char, index) => (
+                      <motion.span
+                        key={`${char}-${index}`}
+                        className={`inline-block ${textColor} text-6xl sm:text-7xl`}
+                        style={{
+                          fontFamily:
+                            "'Caveat', cursive, system-ui, sans-serif",
+                          fontWeight: 400,
+                        }}
+                        initial={{
+                          y: 60,
+                          opacity: 0,
+                          scale: 0.8,
+                          rotate: 10,
+                        }}
+                        animate={{
+                          y: 0,
+                          opacity: 1,
+                          scale: 1,
+                          rotate: 0,
+                        }}
+                        transition={{
+                          duration: 0.5,
+                          ease: [0.34, 1.56, 0.64, 1], // Custom spring-like ease
+                          delay: 0.1 + index * 0.08, // Staggered delay for handwriting effect
+                        }}
+                      >
+                        {char === " " ? "\u00A0" : char}
+                      </motion.span>
+                    ))}
+                  </div>
 
-                {/* Language label with subtle animation */}
-                <motion.p
-                  className={`mt-3 text-sm font-medium uppercase tracking-widest ${subtitleColor}`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 0.8 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.3 + currentGreeting.text.length * 0.03,
-                  }}
-                >
-                  {currentGreeting.lang}
-                </motion.p>
+                  {/* Animated underline below the greeting */}
+                  <motion.div
+                    className={`mt-2 h-0.5 ${textColor} opacity-60`}
+                    initial={{ width: 0 }}
+                    animate={{ width: "120px" }}
+                    transition={{
+                      duration: 0.6,
+                      delay: 0.6 + currentGreeting.text.length * 0.08,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                  />
+
+                  {/* Language label with subtle animation */}
+                  <motion.p
+                    className={`mt-3 text-sm font-medium uppercase tracking-widest ${subtitleColor}`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 0.8 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.6 + currentGreeting.text.length * 0.08,
+                    }}
+                  >
+                    {currentGreeting.lang}
+                  </motion.p>
+                </div>
               </motion.div>
             </AnimatePresence>
 
@@ -176,6 +197,14 @@ const SplashScreen = ({
                 />
               ))}
             </motion.div>
+
+            {/* Add external font link for the handwriting font */}
+            {mounted && (
+              <link
+                href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap"
+                rel="stylesheet"
+              />
+            )}
           </motion.div>
         </motion.div>
       )}
