@@ -270,6 +270,34 @@ export const RESUME_DATA = {
       video: "Maxsoft.mp4",
     },
 
+    // Innothon Website
+    {
+      title: "Innothon 2025",
+      href: "https://www.hitscseinnothon.com/",
+      dates: "February 2025",
+      active: true,
+      description:
+        "A website for the Tech fest cultural event organized by the Department of Computer Science and Engineering, Hindustan Institute of Technology and Science, Chennai. It provides information about the event, registration form and gives us an admin panel to manage the event.",
+      technologies: [
+        "Next.js",
+        "React",
+        "Typescript",
+        "TailwindCSS",
+        "Supabase",
+        "Framer Motion",
+        "Magic UI",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://www.hitscseinnothon.com/",
+          icon: <GlobeIcon className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "Innothon.mp4",
+    },
+
     // RapidResume Website
     {
       title: "RapidResume",
