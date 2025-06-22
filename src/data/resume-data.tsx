@@ -55,6 +55,30 @@ export const RESUME_DATA = {
   ],
   certification: [
     {
+      name: "Adobe Graphic Designer",
+      providerName: "Adobe",
+      link: "https://www.coursera.org/account/accomplishments/specialization/4LA1UY7J4U0C",
+      issueDate: "Jun 2025",
+      expirationDate: "",
+      certificateId: "4LA1UY7J4U0C",
+    },
+    {
+      name: "Programming with Google Go Specialization",
+      providerName: "University of California, Irvine",
+      link: "https://www.coursera.org/account/accomplishments/specialization/D33W64YSPYBH",
+      issueDate: "Apr 2025",
+      expirationDate: "",
+      certificateId: "D33W64YSPYBH",
+    },
+    {
+      name: "AI Infrastructure and Operations Fundamentals",
+      providerName: "NVIDIA",
+      link: "https://www.coursera.org/account/accomplishments/verify/AFBIG8A2FSPF",
+      issueDate: "Apr 2025",
+      expirationDate: "",
+      certificateId: "AFBIG8A2FSPF",
+    },
+    {
       name: "The Fundamentals of RDMA Programming",
       providerName: "NVIDIA",
       link: "https://www.coursera.org/account/accomplishments/verify/LUUQZDGAVSU9",
@@ -145,13 +169,14 @@ export const RESUME_DATA = {
   ],
   languages: ["English", "Tamil"],
   skills: [
-    "React",
-    "Next.js",
+    // "React",
+    // "Next.js",
     "JavaScript",
-    "Typescript",
-    "Node.js",
-    "Express",
-    "MongoDB",
+    // "Typescript",
+    // "Node.js",
+    // "Express",
+    // "MongoDB",
+    "SQL",
     "Java",
     "Python",
     "GO",
@@ -296,56 +321,6 @@ export const RESUME_DATA = {
       ],
       image: "",
       video: "Innothon.mp4",
-    },
-
-    // RapidResume Website
-    {
-      title: "RapidResume",
-      href: "https://rapidresume.beny.one",
-      dates: "July 2024",
-      active: true,
-      description:
-        "A resume builder for the Indian market with ATS compliance in mind. Users can create professional resumes in minutes with built-in ATS scoring.",
-      technologies: ["Next.js", "React", "Redux", "Typescript", "TailwindCSS"],
-      links: [
-        {
-          type: "Website",
-          href: "https://rapidresume.beny.one",
-          icon: <GlobeIcon className="size-3" />,
-        },
-        {
-          type: "GitHub",
-          href: "https://github.com/BenyD/RapidResume",
-          icon: <GitHubIcon className="size-3" />,
-        },
-      ],
-      image: "",
-      video: "RapidResume.mp4",
-    },
-
-    // CGPA Calculator Website
-    {
-      title: "CGPA Calculator",
-      href: "https://cgpa.beny.one/",
-      dates: "May 2024",
-      active: true,
-      description:
-        "A simple web app for students to calculate their CGPA accurately. Provides a clean and intuitive user interface for fast and reliable results.",
-      technologies: ["Next.js", "Typescript", "TailwindCSS", "Shadcn UI"],
-      links: [
-        {
-          type: "Website",
-          href: "https://cgpa.beny.one/",
-          icon: <GlobeIcon className="size-3" />,
-        },
-        {
-          type: "GitHub",
-          href: "https://github.com/BenyD/CGPA-Calculator",
-          icon: <GitHubIcon className="size-3" />,
-        },
-      ],
-      image: "",
-      video: "CGPACalculator.mp4",
     },
   ],
 } as const;
