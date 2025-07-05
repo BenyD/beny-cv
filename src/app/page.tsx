@@ -38,7 +38,7 @@ function CustomPointer({ children }: { children: React.ReactNode }) {
 export default function Page() {
   const [isClient, setIsClient] = useState(false);
   const [currentTime, setCurrentTime] = useState("");
-  const lastUpdated = "March 2025";
+  const lastUpdated = "July 2025";
   const [isHoveringLink, setIsHoveringLink] = useState(false);
 
   // Create a ref to track the main container
@@ -141,7 +141,7 @@ export default function Page() {
                 <Avatar className="size-36">
                   <Image
                     alt={RESUME_DATA.name}
-                    src="/avatar.jpg"
+                    src="/avatar.jpeg"
                     width={144}
                     height={144}
                     className="rounded-full"

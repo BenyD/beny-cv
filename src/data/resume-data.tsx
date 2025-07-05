@@ -172,7 +172,7 @@ export const RESUME_DATA = {
     // "React",
     // "Next.js",
     "JavaScript",
-    // "Typescript",
+    "Typescript",
     // "Node.js",
     // "Express",
     // "MongoDB",
@@ -255,26 +255,6 @@ export const RESUME_DATA = {
       video: "BenyPortfolio.mp4",
     },
 
-    // G Album Website
-    {
-      title: "G Album",
-      href: "https://galbum.net",
-      dates: "November 2023",
-      active: true,
-      description:
-        "A business website for a photo album company to tell their story and showcase products. It focuses on user experience and aesthetic appeal to engage potential clients.",
-      technologies: ["Framer", "Figma", "React", "API"],
-      links: [
-        {
-          type: "Website",
-          href: "https://galbum.net",
-          icon: <GlobeIcon className="size-3" />,
-        },
-      ],
-      image: "",
-      video: "GAlbum.mp4",
-    },
-
     // Maxsoft Website
     {
       title: "Maxsoft AG",
@@ -321,6 +301,60 @@ export const RESUME_DATA = {
       ],
       image: "",
       video: "Innothon.mp4",
+    },
+
+    // G Album Website
+    {
+      title: "G Album",
+      href: "https://galbum.net",
+      dates: "June 2025",
+      active: true,
+      description:
+        "A business website for a photo album company to tell their story and showcase products. It focuses on user experience and aesthetic appeal to engage potential clients. It also has a admin panel to manage the website with RBAC and file upload to dynamically add albums and update the static website.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "TailwindCSS",
+        "Supabase",
+        "Resend",
+        "API",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://galbum.net",
+          icon: <GlobeIcon className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "GAlbum.mp4",
+    },
+
+    // MaxApp Website
+    {
+      title: "MaxApp AG",
+      href: "https://www.maxapp.ch",
+      dates: "July 2025",
+      active: true,
+      description:
+        "A company website for a Swiss IT company, showcasing their services and expertise. Provides an interactive and professional experience for potential clients. It also has a admin panel to manage the website.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "TailwindCSS",
+        "Supabase",
+        "Resend",
+        "API",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://www.maxapp.ch",
+          icon: <GlobeIcon className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "MaxApp.mp4",
     },
   ],
 } as const;
