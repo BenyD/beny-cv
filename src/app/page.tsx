@@ -141,7 +141,7 @@ export default function Page() {
                 <Avatar className="size-36">
                   <Image
                     alt={RESUME_DATA.name}
-                    src="/avatar.jpeg"
+                    src="/avatar.jpg"
                     width={144}
                     height={144}
                     className="rounded-full"
